@@ -1,7 +1,8 @@
-CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o: \
- /home/moubareckou/projetIN204/dependencies/utils/cpp/Vector3.cpp \
+CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o: \
+ /home/moubareckou/projetIN204/dependencies/utils/cpp/color.cpp \
  /usr/include/stdc-predef.h \
- /home/moubareckou/projetIN204/dependencies/utils/cpp/../hpp/Vector3.hpp \
+ /home/moubareckou/projetIN204/dependencies/utils/hpp/Color.hpp \
+ /home/moubareckou/projetIN204/dependencies/utils/hpp/Vector3.hpp \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

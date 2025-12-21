@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/isis/Ensta/POO/IN204
+CMAKE_SOURCE_DIR = /home/moubareckou/projetIN204
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/isis/Ensta/POO/IN204/build
+CMAKE_BINARY_DIR = /home/moubareckou/projetIN204/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/isis/Ensta/POO/IN204/build/CMakeFiles /home/isis/Ensta/POO/IN204/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/moubareckou/projetIN204/build/CMakeFiles /home/moubareckou/projetIN204/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/isis/Ensta/POO/IN204/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/moubareckou/projetIN204/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,6 +129,150 @@ RT/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/build
 .PHONY : RT/fast
 
+dependencies/objects/cpp/Cuboid.o: dependencies/objects/cpp/Cuboid.cpp.o
+.PHONY : dependencies/objects/cpp/Cuboid.o
+
+# target to build an object file
+dependencies/objects/cpp/Cuboid.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.o
+.PHONY : dependencies/objects/cpp/Cuboid.cpp.o
+
+dependencies/objects/cpp/Cuboid.i: dependencies/objects/cpp/Cuboid.cpp.i
+.PHONY : dependencies/objects/cpp/Cuboid.i
+
+# target to preprocess a source file
+dependencies/objects/cpp/Cuboid.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.i
+.PHONY : dependencies/objects/cpp/Cuboid.cpp.i
+
+dependencies/objects/cpp/Cuboid.s: dependencies/objects/cpp/Cuboid.cpp.s
+.PHONY : dependencies/objects/cpp/Cuboid.s
+
+# target to generate assembly for a file
+dependencies/objects/cpp/Cuboid.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.s
+.PHONY : dependencies/objects/cpp/Cuboid.cpp.s
+
+dependencies/objects/cpp/Plan.o: dependencies/objects/cpp/Plan.cpp.o
+.PHONY : dependencies/objects/cpp/Plan.o
+
+# target to build an object file
+dependencies/objects/cpp/Plan.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.o
+.PHONY : dependencies/objects/cpp/Plan.cpp.o
+
+dependencies/objects/cpp/Plan.i: dependencies/objects/cpp/Plan.cpp.i
+.PHONY : dependencies/objects/cpp/Plan.i
+
+# target to preprocess a source file
+dependencies/objects/cpp/Plan.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.i
+.PHONY : dependencies/objects/cpp/Plan.cpp.i
+
+dependencies/objects/cpp/Plan.s: dependencies/objects/cpp/Plan.cpp.s
+.PHONY : dependencies/objects/cpp/Plan.s
+
+# target to generate assembly for a file
+dependencies/objects/cpp/Plan.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.s
+.PHONY : dependencies/objects/cpp/Plan.cpp.s
+
+dependencies/objects/cpp/Sphere.o: dependencies/objects/cpp/Sphere.cpp.o
+.PHONY : dependencies/objects/cpp/Sphere.o
+
+# target to build an object file
+dependencies/objects/cpp/Sphere.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.o
+.PHONY : dependencies/objects/cpp/Sphere.cpp.o
+
+dependencies/objects/cpp/Sphere.i: dependencies/objects/cpp/Sphere.cpp.i
+.PHONY : dependencies/objects/cpp/Sphere.i
+
+# target to preprocess a source file
+dependencies/objects/cpp/Sphere.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.i
+.PHONY : dependencies/objects/cpp/Sphere.cpp.i
+
+dependencies/objects/cpp/Sphere.s: dependencies/objects/cpp/Sphere.cpp.s
+.PHONY : dependencies/objects/cpp/Sphere.s
+
+# target to generate assembly for a file
+dependencies/objects/cpp/Sphere.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.s
+.PHONY : dependencies/objects/cpp/Sphere.cpp.s
+
+dependencies/objects/cpp/_Generic.o: dependencies/objects/cpp/_Generic.cpp.o
+.PHONY : dependencies/objects/cpp/_Generic.o
+
+# target to build an object file
+dependencies/objects/cpp/_Generic.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.o
+.PHONY : dependencies/objects/cpp/_Generic.cpp.o
+
+dependencies/objects/cpp/_Generic.i: dependencies/objects/cpp/_Generic.cpp.i
+.PHONY : dependencies/objects/cpp/_Generic.i
+
+# target to preprocess a source file
+dependencies/objects/cpp/_Generic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.i
+.PHONY : dependencies/objects/cpp/_Generic.cpp.i
+
+dependencies/objects/cpp/_Generic.s: dependencies/objects/cpp/_Generic.cpp.s
+.PHONY : dependencies/objects/cpp/_Generic.s
+
+# target to generate assembly for a file
+dependencies/objects/cpp/_Generic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.s
+.PHONY : dependencies/objects/cpp/_Generic.cpp.s
+
+dependencies/utils/cpp/Camera.o: dependencies/utils/cpp/Camera.cpp.o
+.PHONY : dependencies/utils/cpp/Camera.o
+
+# target to build an object file
+dependencies/utils/cpp/Camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.o
+.PHONY : dependencies/utils/cpp/Camera.cpp.o
+
+dependencies/utils/cpp/Camera.i: dependencies/utils/cpp/Camera.cpp.i
+.PHONY : dependencies/utils/cpp/Camera.i
+
+# target to preprocess a source file
+dependencies/utils/cpp/Camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.i
+.PHONY : dependencies/utils/cpp/Camera.cpp.i
+
+dependencies/utils/cpp/Camera.s: dependencies/utils/cpp/Camera.cpp.s
+.PHONY : dependencies/utils/cpp/Camera.s
+
+# target to generate assembly for a file
+dependencies/utils/cpp/Camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.s
+.PHONY : dependencies/utils/cpp/Camera.cpp.s
+
+dependencies/utils/cpp/Image.o: dependencies/utils/cpp/Image.cpp.o
+.PHONY : dependencies/utils/cpp/Image.o
+
+# target to build an object file
+dependencies/utils/cpp/Image.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.o
+.PHONY : dependencies/utils/cpp/Image.cpp.o
+
+dependencies/utils/cpp/Image.i: dependencies/utils/cpp/Image.cpp.i
+.PHONY : dependencies/utils/cpp/Image.i
+
+# target to preprocess a source file
+dependencies/utils/cpp/Image.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.i
+.PHONY : dependencies/utils/cpp/Image.cpp.i
+
+dependencies/utils/cpp/Image.s: dependencies/utils/cpp/Image.cpp.s
+.PHONY : dependencies/utils/cpp/Image.s
+
+# target to generate assembly for a file
+dependencies/utils/cpp/Image.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.s
+.PHONY : dependencies/utils/cpp/Image.cpp.s
+
 dependencies/utils/cpp/Vector3.o: dependencies/utils/cpp/Vector3.cpp.o
 .PHONY : dependencies/utils/cpp/Vector3.o
 
@@ -152,6 +296,54 @@ dependencies/utils/cpp/Vector3.s: dependencies/utils/cpp/Vector3.cpp.s
 dependencies/utils/cpp/Vector3.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.s
 .PHONY : dependencies/utils/cpp/Vector3.cpp.s
+
+dependencies/utils/cpp/color.o: dependencies/utils/cpp/color.cpp.o
+.PHONY : dependencies/utils/cpp/color.o
+
+# target to build an object file
+dependencies/utils/cpp/color.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o
+.PHONY : dependencies/utils/cpp/color.cpp.o
+
+dependencies/utils/cpp/color.i: dependencies/utils/cpp/color.cpp.i
+.PHONY : dependencies/utils/cpp/color.i
+
+# target to preprocess a source file
+dependencies/utils/cpp/color.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.i
+.PHONY : dependencies/utils/cpp/color.cpp.i
+
+dependencies/utils/cpp/color.s: dependencies/utils/cpp/color.cpp.s
+.PHONY : dependencies/utils/cpp/color.s
+
+# target to generate assembly for a file
+dependencies/utils/cpp/color.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.s
+.PHONY : dependencies/utils/cpp/color.cpp.s
+
+dependencies/utils/cpp/scene.o: dependencies/utils/cpp/scene.cpp.o
+.PHONY : dependencies/utils/cpp/scene.o
+
+# target to build an object file
+dependencies/utils/cpp/scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.o
+.PHONY : dependencies/utils/cpp/scene.cpp.o
+
+dependencies/utils/cpp/scene.i: dependencies/utils/cpp/scene.cpp.i
+.PHONY : dependencies/utils/cpp/scene.i
+
+# target to preprocess a source file
+dependencies/utils/cpp/scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.i
+.PHONY : dependencies/utils/cpp/scene.cpp.i
+
+dependencies/utils/cpp/scene.s: dependencies/utils/cpp/scene.cpp.s
+.PHONY : dependencies/utils/cpp/scene.s
+
+# target to generate assembly for a file
+dependencies/utils/cpp/scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.s
+.PHONY : dependencies/utils/cpp/scene.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -177,6 +369,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+rendering/CApp.o: rendering/CApp.cpp.o
+.PHONY : rendering/CApp.o
+
+# target to build an object file
+rendering/CApp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/rendering/CApp.cpp.o
+.PHONY : rendering/CApp.cpp.o
+
+rendering/CApp.i: rendering/CApp.cpp.i
+.PHONY : rendering/CApp.i
+
+# target to preprocess a source file
+rendering/CApp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/rendering/CApp.cpp.i
+.PHONY : rendering/CApp.cpp.i
+
+rendering/CApp.s: rendering/CApp.cpp.s
+.PHONY : rendering/CApp.s
+
+# target to generate assembly for a file
+rendering/CApp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/rendering/CApp.cpp.s
+.PHONY : rendering/CApp.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +402,39 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... RT"
+	@echo "... dependencies/objects/cpp/Cuboid.o"
+	@echo "... dependencies/objects/cpp/Cuboid.i"
+	@echo "... dependencies/objects/cpp/Cuboid.s"
+	@echo "... dependencies/objects/cpp/Plan.o"
+	@echo "... dependencies/objects/cpp/Plan.i"
+	@echo "... dependencies/objects/cpp/Plan.s"
+	@echo "... dependencies/objects/cpp/Sphere.o"
+	@echo "... dependencies/objects/cpp/Sphere.i"
+	@echo "... dependencies/objects/cpp/Sphere.s"
+	@echo "... dependencies/objects/cpp/_Generic.o"
+	@echo "... dependencies/objects/cpp/_Generic.i"
+	@echo "... dependencies/objects/cpp/_Generic.s"
+	@echo "... dependencies/utils/cpp/Camera.o"
+	@echo "... dependencies/utils/cpp/Camera.i"
+	@echo "... dependencies/utils/cpp/Camera.s"
+	@echo "... dependencies/utils/cpp/Image.o"
+	@echo "... dependencies/utils/cpp/Image.i"
+	@echo "... dependencies/utils/cpp/Image.s"
 	@echo "... dependencies/utils/cpp/Vector3.o"
 	@echo "... dependencies/utils/cpp/Vector3.i"
 	@echo "... dependencies/utils/cpp/Vector3.s"
+	@echo "... dependencies/utils/cpp/color.o"
+	@echo "... dependencies/utils/cpp/color.i"
+	@echo "... dependencies/utils/cpp/color.s"
+	@echo "... dependencies/utils/cpp/scene.o"
+	@echo "... dependencies/utils/cpp/scene.i"
+	@echo "... dependencies/utils/cpp/scene.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... rendering/CApp.o"
+	@echo "... rendering/CApp.i"
+	@echo "... rendering/CApp.s"
 .PHONY : help
 
 
