@@ -2,6 +2,7 @@
 #define CAPP_H
 
 #include <SDL2/SDL.h>
+#include "scene.hpp"
 #include "../dependencies/utils/hpp/Image.hpp" 
 class CApp
 {
@@ -19,10 +20,11 @@ class CApp
     private:
         // An instance of Image to store the image.
         Image m_image;
-    
+        Scene m_scene; 
+        // an instance of scene class 
         // SDL2 stuff.
         bool isRunning;
-        SDL_Window *pWindow;
+        SDL_Window *pWindow  ;
         SDL_Renderer *pRenderer;
 
 };
