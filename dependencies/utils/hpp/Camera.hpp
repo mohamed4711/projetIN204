@@ -49,7 +49,7 @@ class Camera{
     // (Axe X local) Vecteur horizontal de l'écran.
     // Calculé par produit vectoriel. Sa longueur correspond souvent à la largeur de l'écran.
     // Sert à parcourir les pixels de gauche à droite.
-    Vector3 c_PrejectionScreenU; 
+    Vector3 c_ProjectionScreenU; 
 
     // (Axe Y local) Vecteur vertical de l'écran.
     // Calculé pour être perpendiculaire au regard. Sa longueur est ajustée par l'Aspect Ratio.
