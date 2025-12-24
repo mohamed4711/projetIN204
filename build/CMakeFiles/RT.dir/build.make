@@ -73,29 +73,29 @@ CMakeFiles/RT.dir/main.cpp.o: CMakeFiles/RT.dir/flags.make
 CMakeFiles/RT.dir/main.cpp.o: ../main.cpp
 CMakeFiles/RT.dir/main.cpp.o: CMakeFiles/RT.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isis/Ensta/POO/IN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/RT.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/main.cpp.o -MF CMakeFiles/RT.dir/main.cpp.o.d -o CMakeFiles/RT.dir/main.cpp.o -c /home/isis/Ensta/POO/IN204/main.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/main.cpp.o -MF CMakeFiles/RT.dir/main.cpp.o.d -o CMakeFiles/RT.dir/main.cpp.o -c /home/isis/Ensta/POO/IN204/main.cpp
 
 CMakeFiles/RT.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RT.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isis/Ensta/POO/IN204/main.cpp > CMakeFiles/RT.dir/main.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isis/Ensta/POO/IN204/main.cpp > CMakeFiles/RT.dir/main.cpp.i
 
 CMakeFiles/RT.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RT.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isis/Ensta/POO/IN204/main.cpp -o CMakeFiles/RT.dir/main.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isis/Ensta/POO/IN204/main.cpp -o CMakeFiles/RT.dir/main.cpp.s
 
 CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o: CMakeFiles/RT.dir/flags.make
 CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o: ../dependencies/utils/cpp/Vector3.cpp
 CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o: CMakeFiles/RT.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isis/Ensta/POO/IN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o -MF CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o.d -o CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o -c /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/Vector3.cpp
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o -MF CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o.d -o CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o -c /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/Vector3.cpp
 
 CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/Vector3.cpp > CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/Vector3.cpp > CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.i
 
 CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/Vector3.cpp -o CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/Vector3.cpp -o CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.s
 
 # Object files for target RT
 RT_OBJECTS = \
