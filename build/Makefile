@@ -273,6 +273,30 @@ dependencies/utils/cpp/Image.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.s
 .PHONY : dependencies/utils/cpp/Image.cpp.s
 
+dependencies/utils/cpp/Ray.o: dependencies/utils/cpp/Ray.cpp.o
+.PHONY : dependencies/utils/cpp/Ray.o
+
+# target to build an object file
+dependencies/utils/cpp/Ray.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.o
+.PHONY : dependencies/utils/cpp/Ray.cpp.o
+
+dependencies/utils/cpp/Ray.i: dependencies/utils/cpp/Ray.cpp.i
+.PHONY : dependencies/utils/cpp/Ray.i
+
+# target to preprocess a source file
+dependencies/utils/cpp/Ray.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.i
+.PHONY : dependencies/utils/cpp/Ray.cpp.i
+
+dependencies/utils/cpp/Ray.s: dependencies/utils/cpp/Ray.cpp.s
+.PHONY : dependencies/utils/cpp/Ray.s
+
+# target to generate assembly for a file
+dependencies/utils/cpp/Ray.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.s
+.PHONY : dependencies/utils/cpp/Ray.cpp.s
+
 dependencies/utils/cpp/Vector3.o: dependencies/utils/cpp/Vector3.cpp.o
 .PHONY : dependencies/utils/cpp/Vector3.o
 
@@ -420,6 +444,9 @@ help:
 	@echo "... dependencies/utils/cpp/Image.o"
 	@echo "... dependencies/utils/cpp/Image.i"
 	@echo "... dependencies/utils/cpp/Image.s"
+	@echo "... dependencies/utils/cpp/Ray.o"
+	@echo "... dependencies/utils/cpp/Ray.i"
+	@echo "... dependencies/utils/cpp/Ray.s"
 	@echo "... dependencies/utils/cpp/Vector3.o"
 	@echo "... dependencies/utils/cpp/Vector3.i"
 	@echo "... dependencies/utils/cpp/Vector3.s"
