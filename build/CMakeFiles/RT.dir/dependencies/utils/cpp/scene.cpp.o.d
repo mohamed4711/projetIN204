@@ -268,7 +268,7 @@ CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
- /home/moubareckou/projetIN204/dependencies/utils/hpp/Camera.hpp \
+ /home/moubareckou/projetIN204/dependencies/./utils/hpp/Camera.hpp \
  /home/moubareckou/projetIN204/dependencies/utils/hpp/Vector3.hpp \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/exception \
@@ -294,7 +294,8 @@ CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.o: \
  /usr/include/c++/11/bits/istream.tcc \
  /home/moubareckou/projetIN204/dependencies/utils/hpp/Ray.hpp \
  /home/moubareckou/projetIN204/dependencies/utils/hpp/Point3.hpp \
- /home/moubareckou/projetIN204/dependencies/objects/hpp/Sphere.hpp \
- /home/moubareckou/projetIN204/dependencies/objects/hpp/_Generic.hpp \
+ /home/moubareckou/projetIN204/dependencies/utils/hpp/Vector3.hpp \
+ /home/moubareckou/projetIN204/dependencies/./objects/hpp/Sphere.hpp \
+ /home/moubareckou/projetIN204/dependencies/./objects/hpp/_Generic.hpp \
  /home/moubareckou/projetIN204/dependencies/utils/hpp/Ray.hpp \
- /home/moubareckou/projetIN204/dependencies/objects/hpp/Vector3.hpp
+ /home/moubareckou/projetIN204/dependencies/./objects/hpp/Vector3.hpp

@@ -145,9 +145,14 @@ CMakeFiles/RT.dir/main.cpp.o: /home/moubareckou/projetIN204/main.cpp \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/moubareckou/projetIN204/dependencies/utils/hpp/Camera.hpp \
- /home/moubareckou/projetIN204/dependencies/utils/hpp/Vector3.hpp \
- /usr/include/c++/11/cmath /usr/include/math.h \
+ /home/moubareckou/projetIN204/rendering/CApp.hpp /usr/include/SDL2/SDL.h \
+ /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
+ /usr/include/SDL2/SDL_config.h \
+ /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
+ /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
+ /usr/include/SDL2/close_code.h /usr/include/c++/11/stdlib.h \
+ /usr/include/string.h /usr/include/strings.h /usr/include/inttypes.h \
+ /usr/include/c++/11/math.h /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
@@ -170,16 +175,6 @@ CMakeFiles/RT.dir/main.cpp.o: /home/moubareckou/projetIN204/main.cpp \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /home/moubareckou/projetIN204/dependencies/utils/hpp/Ray.hpp \
- /home/moubareckou/projetIN204/dependencies/utils/hpp/Point3.hpp \
- /home/moubareckou/projetIN204/rendering/CApp.hpp /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
- /usr/include/SDL2/SDL_config.h \
- /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
- /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
- /usr/include/SDL2/close_code.h /usr/include/c++/11/stdlib.h \
- /usr/include/string.h /usr/include/strings.h /usr/include/inttypes.h \
- /usr/include/c++/11/math.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
  /usr/include/SDL2/SDL_assert.h /usr/include/SDL2/SDL_atomic.h \
  /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/SDL_audio.h \
@@ -293,9 +288,14 @@ CMakeFiles/RT.dir/main.cpp.o: /home/moubareckou/projetIN204/main.cpp \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
  /home/moubareckou/projetIN204/dependencies/utils/hpp/Image.hpp \
- /home/moubareckou/projetIN204/dependencies/utils/hpp/Camera.hpp \
- /home/moubareckou/projetIN204/dependencies/objects/hpp/Sphere.hpp \
- /home/moubareckou/projetIN204/dependencies/objects/hpp/_Generic.hpp \
+ /home/moubareckou/projetIN204/dependencies/./utils/hpp/Camera.hpp \
+ /home/moubareckou/projetIN204/dependencies/utils/hpp/Vector3.hpp \
  /home/moubareckou/projetIN204/dependencies/utils/hpp/Ray.hpp \
- /home/moubareckou/projetIN204/dependencies/objects/hpp/Vector3.hpp \
- /home/moubareckou/projetIN204/rendering/../dependencies/utils/hpp/Image.hpp
+ /home/moubareckou/projetIN204/dependencies/utils/hpp/Point3.hpp \
+ /home/moubareckou/projetIN204/dependencies/utils/hpp/Vector3.hpp \
+ /home/moubareckou/projetIN204/dependencies/./objects/hpp/Sphere.hpp \
+ /home/moubareckou/projetIN204/dependencies/./objects/hpp/_Generic.hpp \
+ /home/moubareckou/projetIN204/dependencies/utils/hpp/Ray.hpp \
+ /home/moubareckou/projetIN204/dependencies/./objects/hpp/Vector3.hpp \
+ /home/moubareckou/projetIN204/dependencies/utils/hpp/Image.hpp \
+ /home/moubareckou/projetIN204/dependencies/utils/hpp/Vector3.hpp
