@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Build project with all cpp files",
+            "command": "g++.exe",
+            "args": [
+                "-g",
+                "*.cpp", // <-- LA MAGIE EST ICI : prend tous les fichiers .cpp
+                "-o",
+                "${workspaceFolderBasename}.exe" // <-- Nomme l'exécutable comme le dossier du projet
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: g++.exe"
+        }
+    ]
+}

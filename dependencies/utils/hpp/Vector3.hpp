@@ -49,6 +49,15 @@ public:
     Vector3& operator-=(const Vector3& v);
     Vector3& operator*=(double scalar);
 
+    Vector3& operator=(const Vector3& other) {
+        if (this != &other) {
+            x = other.x;
+            y = other.y;
+            z = other.z;
+        }
+        return *this;
+    }
+
     // Accès par index (implemented inline above)
 };
 

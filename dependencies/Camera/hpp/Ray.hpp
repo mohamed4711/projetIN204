@@ -1,8 +1,8 @@
 #ifndef RAY_H
 #define RAY_H
 
-#include "Point3.hpp"
-#include "Vector3.hpp"
+#include "../../utils/hpp/Point3.hpp"
+#include "../../utils/hpp/Vector3.hpp"
 
 class Ray {
   public:

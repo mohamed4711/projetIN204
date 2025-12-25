@@ -2,7 +2,7 @@
 #define CAPP_H
 
 #include <SDL2/SDL.h>
-#include "scene.hpp"
+#include "../dependencies/Scene/hpp/scene.hpp"
 #include "../dependencies/utils/hpp/Image.hpp" 
 class CApp
 {

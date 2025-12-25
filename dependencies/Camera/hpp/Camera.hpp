@@ -1,7 +1,7 @@
 #ifndef CAMERA_HPP
 #define CAMERA_HPP
-#include "Vector3.hpp"
-#include "../../Camera/hpp/Ray.hpp"
+#include "utils/hpp/Vector3.hpp"
+#include "utils/hpp/Ray.hpp"
 
 
 

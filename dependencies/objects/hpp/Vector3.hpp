@@ -47,6 +47,14 @@ public:
     // Accès par index
     double operator[](int i) const;
     double& operator[](int i);
+    Vector3& operator=(const Vector3& other) {
+        if (this != &other) {
+            x = other.x;
+            y = other.y;
+            z = other.z;
+        }
+        return *this;
+    }
 };
 
 // --- Fonctions utilitaires externes ---
@@ -56,5 +64,6 @@ Vector3 operator*(double scalar, const Vector3& v);
 
 // Permet d'afficher le vecteur avec std::cout << v
 std::ostream& operator<<(std::ostream& os, const Vector3& v);
+
 
 #endif // VECTOR3_HPP
