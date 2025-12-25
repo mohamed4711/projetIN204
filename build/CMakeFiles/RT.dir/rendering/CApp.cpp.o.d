@@ -214,7 +214,7 @@ CMakeFiles/RT.dir/rendering/CApp.cpp.o: \
  /usr/include/SDL2/SDL_shape.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
- /home/moubareckou/projetIN204/dependencies/utils/hpp/scene.hpp \
+ /home/moubareckou/projetIN204/rendering/../dependencies/Scene/hpp/scene.hpp \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/allocator.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h \
  /usr/include/c++/11/ext/new_allocator.h /usr/include/c++/11/new \
@@ -269,7 +269,7 @@ CMakeFiles/RT.dir/rendering/CApp.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
- /home/moubareckou/projetIN204/dependencies/./utils/hpp/Camera.hpp \
+ /home/moubareckou/projetIN204/dependencies/utils/hpp/Camera.hpp \
  /home/moubareckou/projetIN204/dependencies/utils/hpp/Vector3.hpp \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/exception \
@@ -293,11 +293,38 @@ CMakeFiles/RT.dir/rendering/CApp.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/moubareckou/projetIN204/dependencies/utils/hpp/Ray.hpp \
- /home/moubareckou/projetIN204/dependencies/utils/hpp/Point3.hpp \
- /home/moubareckou/projetIN204/dependencies/utils/hpp/Vector3.hpp \
- /home/moubareckou/projetIN204/dependencies/./objects/hpp/Sphere.hpp \
+ /home/moubareckou/projetIN204/dependencies/utils/hpp/../../Camera/hpp/Ray.hpp \
+ /home/moubareckou/projetIN204/dependencies/utils/hpp/../../Camera/hpp/../../utils/hpp/Point3.hpp \
+ /home/moubareckou/projetIN204/dependencies/utils/hpp/../../Camera/hpp/../../utils/hpp/Vector3.hpp \
+ /home/moubareckou/projetIN204/dependencies/utils/hpp/../../Camera/hpp/../../utils/hpp/Vector3.hpp \
+ /home/moubareckou/projetIN204/dependencies/objects/hpp/Sphere.hpp \
+ /home/moubareckou/projetIN204/dependencies/objects/hpp/_Generic.hpp \
+ /home/moubareckou/projetIN204/dependencies/objects/hpp/../../Camera/hpp/Ray.hpp \
+ /home/moubareckou/projetIN204/dependencies/objects/hpp/Vector3.hpp \
+ /home/moubareckou/projetIN204/dependencies/./objects/hpp/_Hittable_object_list.hpp \
  /home/moubareckou/projetIN204/dependencies/./objects/hpp/_Generic.hpp \
- /home/moubareckou/projetIN204/dependencies/utils/hpp/Ray.hpp \
- /home/moubareckou/projetIN204/dependencies/./objects/hpp/Vector3.hpp \
- /home/moubareckou/projetIN204/dependencies/utils/hpp/Image.hpp
+ /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_tempbuf.h \
+ /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
+ /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/unique_ptr.h /usr/include/c++/11/utility \
+ /usr/include/c++/11/bits/stl_relops.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/shared_ptr.h \
+ /usr/include/c++/11/bits/shared_ptr_base.h \
+ /usr/include/c++/11/bits/allocated_ptr.h \
+ /usr/include/c++/11/bits/refwrap.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/ext/concurrence.h \
+ /usr/include/c++/11/bits/shared_ptr_atomic.h \
+ /usr/include/c++/11/bits/atomic_base.h \
+ /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/11/backward/auto_ptr.h \
+ /usr/include/c++/11/pstl/glue_memory_defs.h \
+ /usr/include/c++/11/pstl/execution_defs.h \
+ /home/moubareckou/projetIN204/dependencies/./lights/hpp/Light_list.hpp \
+ /home/moubareckou/projetIN204/dependencies/./lights/hpp/Light.hpp \
+ /home/moubareckou/projetIN204/dependencies/./utils/hpp/Vector3.hpp \
+ /home/moubareckou/projetIN204/dependencies/./utils/hpp/Point3.hpp \
+ /home/moubareckou/projetIN204/dependencies/./objects/hpp/_Generic.hpp \
+ /home/moubareckou/projetIN204/rendering/../dependencies/utils/hpp/Image.hpp

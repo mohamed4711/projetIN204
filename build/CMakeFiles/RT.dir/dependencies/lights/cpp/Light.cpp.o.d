@@ -1,8 +1,8 @@
-CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o: \
- /home/moubareckou/projetIN204/dependencies/utils/cpp/color.cpp \
+CMakeFiles/RT.dir/dependencies/lights/cpp/Light.cpp.o: \
+ /home/moubareckou/projetIN204/dependencies/lights/cpp/Light.cpp \
  /usr/include/stdc-predef.h \
- /home/moubareckou/projetIN204/dependencies/utils/cpp/../hpp/Color.hpp \
- /home/moubareckou/projetIN204/dependencies/utils/cpp/../hpp/Vector3.hpp \
+ /home/moubareckou/projetIN204/dependencies/lights/cpp/../hpp/Light.hpp \
+ /home/moubareckou/projetIN204/dependencies/./utils/hpp/Vector3.hpp \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -170,4 +170,35 @@ CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o: \
  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
- /usr/include/c++/11/tr1/riemann_zeta.tcc
+ /usr/include/c++/11/tr1/riemann_zeta.tcc \
+ /home/moubareckou/projetIN204/dependencies/./utils/hpp/Point3.hpp \
+ /home/moubareckou/projetIN204/dependencies/./utils/hpp/Vector3.hpp \
+ /home/moubareckou/projetIN204/dependencies/./objects/hpp/_Generic.hpp \
+ /home/moubareckou/projetIN204/dependencies/./objects/hpp/../../Camera/hpp/Ray.hpp \
+ /home/moubareckou/projetIN204/dependencies/./objects/hpp/../../Camera/hpp/../../utils/hpp/Point3.hpp \
+ /home/moubareckou/projetIN204/dependencies/./objects/hpp/../../Camera/hpp/../../utils/hpp/Vector3.hpp \
+ /home/moubareckou/projetIN204/dependencies/./objects/hpp/_Hittable_object_list.hpp \
+ /home/moubareckou/projetIN204/dependencies/./objects/hpp/_Generic.hpp \
+ /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/bits/stl_tempbuf.h \
+ /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
+ /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/unique_ptr.h /usr/include/c++/11/utility \
+ /usr/include/c++/11/bits/stl_relops.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/shared_ptr.h \
+ /usr/include/c++/11/bits/shared_ptr_base.h \
+ /usr/include/c++/11/bits/allocated_ptr.h \
+ /usr/include/c++/11/bits/refwrap.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/ext/concurrence.h \
+ /usr/include/c++/11/bits/shared_ptr_atomic.h \
+ /usr/include/c++/11/bits/atomic_base.h \
+ /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/11/backward/auto_ptr.h \
+ /usr/include/c++/11/pstl/glue_memory_defs.h \
+ /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/vector \
+ /usr/include/c++/11/bits/stl_vector.h \
+ /usr/include/c++/11/bits/stl_bvector.h \
+ /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/math.h

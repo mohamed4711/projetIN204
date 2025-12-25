@@ -129,6 +129,78 @@ RT/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/build
 .PHONY : RT/fast
 
+dependencies/Scene/cpp/scene.o: dependencies/Scene/cpp/scene.cpp.o
+.PHONY : dependencies/Scene/cpp/scene.o
+
+# target to build an object file
+dependencies/Scene/cpp/scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/Scene/cpp/scene.cpp.o
+.PHONY : dependencies/Scene/cpp/scene.cpp.o
+
+dependencies/Scene/cpp/scene.i: dependencies/Scene/cpp/scene.cpp.i
+.PHONY : dependencies/Scene/cpp/scene.i
+
+# target to preprocess a source file
+dependencies/Scene/cpp/scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/Scene/cpp/scene.cpp.i
+.PHONY : dependencies/Scene/cpp/scene.cpp.i
+
+dependencies/Scene/cpp/scene.s: dependencies/Scene/cpp/scene.cpp.s
+.PHONY : dependencies/Scene/cpp/scene.s
+
+# target to generate assembly for a file
+dependencies/Scene/cpp/scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/Scene/cpp/scene.cpp.s
+.PHONY : dependencies/Scene/cpp/scene.cpp.s
+
+dependencies/lights/cpp/Light.o: dependencies/lights/cpp/Light.cpp.o
+.PHONY : dependencies/lights/cpp/Light.o
+
+# target to build an object file
+dependencies/lights/cpp/Light.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/lights/cpp/Light.cpp.o
+.PHONY : dependencies/lights/cpp/Light.cpp.o
+
+dependencies/lights/cpp/Light.i: dependencies/lights/cpp/Light.cpp.i
+.PHONY : dependencies/lights/cpp/Light.i
+
+# target to preprocess a source file
+dependencies/lights/cpp/Light.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/lights/cpp/Light.cpp.i
+.PHONY : dependencies/lights/cpp/Light.cpp.i
+
+dependencies/lights/cpp/Light.s: dependencies/lights/cpp/Light.cpp.s
+.PHONY : dependencies/lights/cpp/Light.s
+
+# target to generate assembly for a file
+dependencies/lights/cpp/Light.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/lights/cpp/Light.cpp.s
+.PHONY : dependencies/lights/cpp/Light.cpp.s
+
+dependencies/lights/cpp/Light_list.o: dependencies/lights/cpp/Light_list.cpp.o
+.PHONY : dependencies/lights/cpp/Light_list.o
+
+# target to build an object file
+dependencies/lights/cpp/Light_list.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/lights/cpp/Light_list.cpp.o
+.PHONY : dependencies/lights/cpp/Light_list.cpp.o
+
+dependencies/lights/cpp/Light_list.i: dependencies/lights/cpp/Light_list.cpp.i
+.PHONY : dependencies/lights/cpp/Light_list.i
+
+# target to preprocess a source file
+dependencies/lights/cpp/Light_list.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/lights/cpp/Light_list.cpp.i
+.PHONY : dependencies/lights/cpp/Light_list.cpp.i
+
+dependencies/lights/cpp/Light_list.s: dependencies/lights/cpp/Light_list.cpp.s
+.PHONY : dependencies/lights/cpp/Light_list.s
+
+# target to generate assembly for a file
+dependencies/lights/cpp/Light_list.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/lights/cpp/Light_list.cpp.s
+.PHONY : dependencies/lights/cpp/Light_list.cpp.s
+
 dependencies/objects/cpp/Cuboid.o: dependencies/objects/cpp/Cuboid.cpp.o
 .PHONY : dependencies/objects/cpp/Cuboid.o
 
@@ -273,30 +345,6 @@ dependencies/utils/cpp/Image.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.s
 .PHONY : dependencies/utils/cpp/Image.cpp.s
 
-dependencies/utils/cpp/Ray.o: dependencies/utils/cpp/Ray.cpp.o
-.PHONY : dependencies/utils/cpp/Ray.o
-
-# target to build an object file
-dependencies/utils/cpp/Ray.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.o
-.PHONY : dependencies/utils/cpp/Ray.cpp.o
-
-dependencies/utils/cpp/Ray.i: dependencies/utils/cpp/Ray.cpp.i
-.PHONY : dependencies/utils/cpp/Ray.i
-
-# target to preprocess a source file
-dependencies/utils/cpp/Ray.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.i
-.PHONY : dependencies/utils/cpp/Ray.cpp.i
-
-dependencies/utils/cpp/Ray.s: dependencies/utils/cpp/Ray.cpp.s
-.PHONY : dependencies/utils/cpp/Ray.s
-
-# target to generate assembly for a file
-dependencies/utils/cpp/Ray.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.s
-.PHONY : dependencies/utils/cpp/Ray.cpp.s
-
 dependencies/utils/cpp/Vector3.o: dependencies/utils/cpp/Vector3.cpp.o
 .PHONY : dependencies/utils/cpp/Vector3.o
 
@@ -344,30 +392,6 @@ dependencies/utils/cpp/color.s: dependencies/utils/cpp/color.cpp.s
 dependencies/utils/cpp/color.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.s
 .PHONY : dependencies/utils/cpp/color.cpp.s
-
-dependencies/utils/cpp/scene.o: dependencies/utils/cpp/scene.cpp.o
-.PHONY : dependencies/utils/cpp/scene.o
-
-# target to build an object file
-dependencies/utils/cpp/scene.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.o
-.PHONY : dependencies/utils/cpp/scene.cpp.o
-
-dependencies/utils/cpp/scene.i: dependencies/utils/cpp/scene.cpp.i
-.PHONY : dependencies/utils/cpp/scene.i
-
-# target to preprocess a source file
-dependencies/utils/cpp/scene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.i
-.PHONY : dependencies/utils/cpp/scene.cpp.i
-
-dependencies/utils/cpp/scene.s: dependencies/utils/cpp/scene.cpp.s
-.PHONY : dependencies/utils/cpp/scene.s
-
-# target to generate assembly for a file
-dependencies/utils/cpp/scene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RT.dir/build.make CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.s
-.PHONY : dependencies/utils/cpp/scene.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -426,6 +450,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... RT"
+	@echo "... dependencies/Scene/cpp/scene.o"
+	@echo "... dependencies/Scene/cpp/scene.i"
+	@echo "... dependencies/Scene/cpp/scene.s"
+	@echo "... dependencies/lights/cpp/Light.o"
+	@echo "... dependencies/lights/cpp/Light.i"
+	@echo "... dependencies/lights/cpp/Light.s"
+	@echo "... dependencies/lights/cpp/Light_list.o"
+	@echo "... dependencies/lights/cpp/Light_list.i"
+	@echo "... dependencies/lights/cpp/Light_list.s"
 	@echo "... dependencies/objects/cpp/Cuboid.o"
 	@echo "... dependencies/objects/cpp/Cuboid.i"
 	@echo "... dependencies/objects/cpp/Cuboid.s"
@@ -444,18 +477,12 @@ help:
 	@echo "... dependencies/utils/cpp/Image.o"
 	@echo "... dependencies/utils/cpp/Image.i"
 	@echo "... dependencies/utils/cpp/Image.s"
-	@echo "... dependencies/utils/cpp/Ray.o"
-	@echo "... dependencies/utils/cpp/Ray.i"
-	@echo "... dependencies/utils/cpp/Ray.s"
 	@echo "... dependencies/utils/cpp/Vector3.o"
 	@echo "... dependencies/utils/cpp/Vector3.i"
 	@echo "... dependencies/utils/cpp/Vector3.s"
 	@echo "... dependencies/utils/cpp/color.o"
 	@echo "... dependencies/utils/cpp/color.i"
 	@echo "... dependencies/utils/cpp/color.s"
-	@echo "... dependencies/utils/cpp/scene.o"
-	@echo "... dependencies/utils/cpp/scene.i"
-	@echo "... dependencies/utils/cpp/scene.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
