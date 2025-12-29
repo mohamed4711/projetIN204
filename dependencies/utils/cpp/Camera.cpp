@@ -1,4 +1,4 @@
-#include "dependencies/utils/hpp/Camera.hpp"
+#include "../hpp/Camera.hpp"
 
 // Default Constructor
 Camera::Camera() {
