@@ -1,7 +1,7 @@
 #ifndef GENERIC_OBJECT_HPP
 #define GENERIC_OBJECT_HPP
 
-#include "../../Camera/hpp/Ray.hpp"
+#include "camera/hpp/Ray.hpp"
 
 class hit_record {
   public:

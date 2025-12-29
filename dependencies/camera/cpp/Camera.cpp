@@ -1,4 +1,4 @@
-#include "../hpp/Camera.hpp"
+#include "camera/hpp/Camera.hpp"
 
 
 // Default Constructor

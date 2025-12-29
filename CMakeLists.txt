@@ -5,6 +5,7 @@ project(RT)
 include_directories(dependencies)
 include_directories(dependencies/utils/hpp)
 include_directories(dependencies/objects/hpp)
+include_directories(dependencies/camera/hpp)
 include_directories(interface)
 include_directories(rendering)
 
@@ -12,6 +13,7 @@ include_directories(rendering)
 file(GLOB_RECURSE SOURCES
     "main.cpp"
     "dependencies/utils/**/*.cpp"
+    "dependencies/camera/**/*.cpp"
     "dependencies/objects/**/*.cpp"
     "dependencies/lights/**/*.cpp"
     "dependencies/Scene/**/*.cpp"

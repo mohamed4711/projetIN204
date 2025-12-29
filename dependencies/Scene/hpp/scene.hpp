@@ -4,7 +4,7 @@
 #include <vector>
 #include<SDL2/SDL.h>
 #include "utils/hpp/Image.hpp"
-#include "utils/hpp/Camera.hpp"
+#include "camera/hpp/Camera.hpp"
 #include "objects/hpp/Sphere.hpp"
 #include"./objects/hpp/_Hittable_object_list.hpp"
 #include "./lights/hpp/Light_list.hpp"
