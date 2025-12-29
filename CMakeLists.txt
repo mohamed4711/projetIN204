@@ -13,6 +13,8 @@ file(GLOB_RECURSE SOURCES
     "main.cpp"
     "dependencies/utils/**/*.cpp"
     "dependencies/objects/**/*.cpp"
+    "dependencies/lights/**/*.cpp"
+    "dependencies/Scene/**/*.cpp"
     "interface/**/*.cpp"
     "rendering/*.cpp"
 )

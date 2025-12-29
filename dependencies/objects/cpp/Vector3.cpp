@@ -1,4 +1,4 @@
-#include "Vector3.hpp"
+#include "../hpp/Vector3.hpp"
 #include <cmath>
 
 // --- Constructeurs ---

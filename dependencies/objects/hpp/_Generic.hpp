@@ -1,15 +1,17 @@
 #ifndef GENERIC_OBJECT_HPP
 #define GENERIC_OBJECT_HPP
 
-#include "Ray.hpp"
-#include "../../utils/hpp/interval.hpp"
+#include "../../Camera/hpp/Ray.hpp"
 
 class hit_record {
   public:
-    Point3 p;
-    Vector3 normal;
+    Point3 p; //hitting  point 
+    Vector3 normal; // t p= orig +t*direc
     double t;
-    bool front_face;
+    bool front_face; // front surface(true )
+    Vector3 LocalColor; 
+    double ColorIntensity; 
+
 
     void set_face_normal(const Ray& r, const Vector3& outward_normal) {
         // Sets the hit record normal vector.
@@ -24,7 +26,7 @@ class hittable {
   public:
     virtual ~hittable() = default;
 
-    virtual bool hit(const Ray& r, const interval& ray_t, hit_record& rec) const = 0;
+    virtual bool hit(const Ray& r, double *ray_tmin, double* ray_tmax, hit_record& rec) const = 0;
 };
 
 #endif
