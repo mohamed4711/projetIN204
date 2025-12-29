@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.o.d"
   "CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.o"
   "CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.o.d"
+  "CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.o"
+  "CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.o.d"
   "CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o"
   "CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o.d"
   "CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o"

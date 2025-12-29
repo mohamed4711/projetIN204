@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/moubareckou/projetIN204
+CMAKE_SOURCE_DIR = /home/isis/Ensta/POO/IN204
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/moubareckou/projetIN204/build
+CMAKE_BINARY_DIR = /home/isis/Ensta/POO/IN204/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/RT.dir/depend.make
@@ -69,111 +69,108 @@ include CMakeFiles/RT.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/RT.dir/flags.make
 
-<<<<<<< HEAD
-CMakeFiles/RT.dir/main.cpp.o: CMakeFiles/RT.dir/flags.make
-CMakeFiles/RT.dir/main.cpp.o: ../main.cpp
-CMakeFiles/RT.dir/main.cpp.o: CMakeFiles/RT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isis/Ensta/POO/IN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/RT.dir/main.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/main.cpp.o -MF CMakeFiles/RT.dir/main.cpp.o.d -o CMakeFiles/RT.dir/main.cpp.o -c /home/isis/Ensta/POO/IN204/main.cpp
-
-CMakeFiles/RT.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RT.dir/main.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isis/Ensta/POO/IN204/main.cpp > CMakeFiles/RT.dir/main.cpp.i
-
-CMakeFiles/RT.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RT.dir/main.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isis/Ensta/POO/IN204/main.cpp -o CMakeFiles/RT.dir/main.cpp.s
-=======
 CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.o: CMakeFiles/RT.dir/flags.make
 CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.o: ../dependencies/objects/cpp/Cuboid.cpp
 CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.o: CMakeFiles/RT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moubareckou/projetIN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.o -MF CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.o.d -o CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.o -c /home/moubareckou/projetIN204/dependencies/objects/cpp/Cuboid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isis/Ensta/POO/IN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.o -MF CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.o.d -o CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.o -c /home/isis/Ensta/POO/IN204/dependencies/objects/cpp/Cuboid.cpp
 
 CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moubareckou/projetIN204/dependencies/objects/cpp/Cuboid.cpp > CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isis/Ensta/POO/IN204/dependencies/objects/cpp/Cuboid.cpp > CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.i
 
 CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moubareckou/projetIN204/dependencies/objects/cpp/Cuboid.cpp -o CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isis/Ensta/POO/IN204/dependencies/objects/cpp/Cuboid.cpp -o CMakeFiles/RT.dir/dependencies/objects/cpp/Cuboid.cpp.s
 
 CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.o: CMakeFiles/RT.dir/flags.make
 CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.o: ../dependencies/objects/cpp/Plan.cpp
 CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.o: CMakeFiles/RT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moubareckou/projetIN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.o -MF CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.o.d -o CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.o -c /home/moubareckou/projetIN204/dependencies/objects/cpp/Plan.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isis/Ensta/POO/IN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.o -MF CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.o.d -o CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.o -c /home/isis/Ensta/POO/IN204/dependencies/objects/cpp/Plan.cpp
 
 CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moubareckou/projetIN204/dependencies/objects/cpp/Plan.cpp > CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isis/Ensta/POO/IN204/dependencies/objects/cpp/Plan.cpp > CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.i
 
 CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moubareckou/projetIN204/dependencies/objects/cpp/Plan.cpp -o CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isis/Ensta/POO/IN204/dependencies/objects/cpp/Plan.cpp -o CMakeFiles/RT.dir/dependencies/objects/cpp/Plan.cpp.s
 
 CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.o: CMakeFiles/RT.dir/flags.make
 CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.o: ../dependencies/objects/cpp/Sphere.cpp
 CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.o: CMakeFiles/RT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moubareckou/projetIN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.o -MF CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.o.d -o CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.o -c /home/moubareckou/projetIN204/dependencies/objects/cpp/Sphere.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isis/Ensta/POO/IN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.o -MF CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.o.d -o CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.o -c /home/isis/Ensta/POO/IN204/dependencies/objects/cpp/Sphere.cpp
 
 CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moubareckou/projetIN204/dependencies/objects/cpp/Sphere.cpp > CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isis/Ensta/POO/IN204/dependencies/objects/cpp/Sphere.cpp > CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.i
 
 CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moubareckou/projetIN204/dependencies/objects/cpp/Sphere.cpp -o CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isis/Ensta/POO/IN204/dependencies/objects/cpp/Sphere.cpp -o CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.s
 
 CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.o: CMakeFiles/RT.dir/flags.make
 CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.o: ../dependencies/objects/cpp/_Generic.cpp
 CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.o: CMakeFiles/RT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moubareckou/projetIN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.o -MF CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.o.d -o CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.o -c /home/moubareckou/projetIN204/dependencies/objects/cpp/_Generic.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isis/Ensta/POO/IN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.o -MF CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.o.d -o CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.o -c /home/isis/Ensta/POO/IN204/dependencies/objects/cpp/_Generic.cpp
 
 CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moubareckou/projetIN204/dependencies/objects/cpp/_Generic.cpp > CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isis/Ensta/POO/IN204/dependencies/objects/cpp/_Generic.cpp > CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.i
 
 CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moubareckou/projetIN204/dependencies/objects/cpp/_Generic.cpp -o CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isis/Ensta/POO/IN204/dependencies/objects/cpp/_Generic.cpp -o CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.s
 
 CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.o: CMakeFiles/RT.dir/flags.make
 CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.o: ../dependencies/utils/cpp/Camera.cpp
 CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.o: CMakeFiles/RT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moubareckou/projetIN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.o -MF CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.o.d -o CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.o -c /home/moubareckou/projetIN204/dependencies/utils/cpp/Camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isis/Ensta/POO/IN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.o -MF CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.o.d -o CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.o -c /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/Camera.cpp
 
 CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moubareckou/projetIN204/dependencies/utils/cpp/Camera.cpp > CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/Camera.cpp > CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.i
 
 CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moubareckou/projetIN204/dependencies/utils/cpp/Camera.cpp -o CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/Camera.cpp -o CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.s
 
 CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.o: CMakeFiles/RT.dir/flags.make
 CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.o: ../dependencies/utils/cpp/Image.cpp
 CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.o: CMakeFiles/RT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moubareckou/projetIN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.o -MF CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.o.d -o CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.o -c /home/moubareckou/projetIN204/dependencies/utils/cpp/Image.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isis/Ensta/POO/IN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.o -MF CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.o.d -o CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.o -c /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/Image.cpp
 
 CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moubareckou/projetIN204/dependencies/utils/cpp/Image.cpp > CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/Image.cpp > CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.i
 
 CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moubareckou/projetIN204/dependencies/utils/cpp/Image.cpp -o CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.s
->>>>>>> 6a439fb30db14ee1ed53fb4d26fb4b35d732637c
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/Image.cpp -o CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.s
+
+CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.o: CMakeFiles/RT.dir/flags.make
+CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.o: ../dependencies/utils/cpp/Ray.cpp
+CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.o: CMakeFiles/RT.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isis/Ensta/POO/IN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.o -MF CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.o.d -o CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.o -c /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/Ray.cpp
+
+CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/Ray.cpp > CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.i
+
+CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/Ray.cpp -o CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.s
 
 CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o: CMakeFiles/RT.dir/flags.make
 CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o: ../dependencies/utils/cpp/Vector3.cpp
 CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o: CMakeFiles/RT.dir/compiler_depend.ts
-<<<<<<< HEAD
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isis/Ensta/POO/IN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isis/Ensta/POO/IN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o -MF CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o.d -o CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o -c /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/Vector3.cpp
 
 CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.i: cmake_force
@@ -183,74 +180,62 @@ CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.i: cmake_force
 CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/Vector3.cpp -o CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.s
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moubareckou/projetIN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o -MF CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o.d -o CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o -c /home/moubareckou/projetIN204/dependencies/utils/cpp/Vector3.cpp
-
-CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moubareckou/projetIN204/dependencies/utils/cpp/Vector3.cpp > CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.i
-
-CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moubareckou/projetIN204/dependencies/utils/cpp/Vector3.cpp -o CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.s
 
 CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o: CMakeFiles/RT.dir/flags.make
 CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o: ../dependencies/utils/cpp/color.cpp
 CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o: CMakeFiles/RT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moubareckou/projetIN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o -MF CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o.d -o CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o -c /home/moubareckou/projetIN204/dependencies/utils/cpp/color.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isis/Ensta/POO/IN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o -MF CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o.d -o CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o -c /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/color.cpp
 
 CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moubareckou/projetIN204/dependencies/utils/cpp/color.cpp > CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/color.cpp > CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.i
 
 CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moubareckou/projetIN204/dependencies/utils/cpp/color.cpp -o CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/color.cpp -o CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.s
 
 CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.o: CMakeFiles/RT.dir/flags.make
 CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.o: ../dependencies/utils/cpp/scene.cpp
 CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.o: CMakeFiles/RT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moubareckou/projetIN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.o -MF CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.o.d -o CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.o -c /home/moubareckou/projetIN204/dependencies/utils/cpp/scene.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isis/Ensta/POO/IN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.o -MF CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.o.d -o CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.o -c /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/scene.cpp
 
 CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moubareckou/projetIN204/dependencies/utils/cpp/scene.cpp > CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/scene.cpp > CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.i
 
 CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moubareckou/projetIN204/dependencies/utils/cpp/scene.cpp -o CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isis/Ensta/POO/IN204/dependencies/utils/cpp/scene.cpp -o CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.s
 
 CMakeFiles/RT.dir/main.cpp.o: CMakeFiles/RT.dir/flags.make
 CMakeFiles/RT.dir/main.cpp.o: ../main.cpp
 CMakeFiles/RT.dir/main.cpp.o: CMakeFiles/RT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moubareckou/projetIN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/RT.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/main.cpp.o -MF CMakeFiles/RT.dir/main.cpp.o.d -o CMakeFiles/RT.dir/main.cpp.o -c /home/moubareckou/projetIN204/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isis/Ensta/POO/IN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/RT.dir/main.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/main.cpp.o -MF CMakeFiles/RT.dir/main.cpp.o.d -o CMakeFiles/RT.dir/main.cpp.o -c /home/isis/Ensta/POO/IN204/main.cpp
 
 CMakeFiles/RT.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RT.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moubareckou/projetIN204/main.cpp > CMakeFiles/RT.dir/main.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isis/Ensta/POO/IN204/main.cpp > CMakeFiles/RT.dir/main.cpp.i
 
 CMakeFiles/RT.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RT.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moubareckou/projetIN204/main.cpp -o CMakeFiles/RT.dir/main.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isis/Ensta/POO/IN204/main.cpp -o CMakeFiles/RT.dir/main.cpp.s
 
 CMakeFiles/RT.dir/rendering/CApp.cpp.o: CMakeFiles/RT.dir/flags.make
 CMakeFiles/RT.dir/rendering/CApp.cpp.o: ../rendering/CApp.cpp
 CMakeFiles/RT.dir/rendering/CApp.cpp.o: CMakeFiles/RT.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/moubareckou/projetIN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/RT.dir/rendering/CApp.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/rendering/CApp.cpp.o -MF CMakeFiles/RT.dir/rendering/CApp.cpp.o.d -o CMakeFiles/RT.dir/rendering/CApp.cpp.o -c /home/moubareckou/projetIN204/rendering/CApp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/isis/Ensta/POO/IN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/RT.dir/rendering/CApp.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RT.dir/rendering/CApp.cpp.o -MF CMakeFiles/RT.dir/rendering/CApp.cpp.o.d -o CMakeFiles/RT.dir/rendering/CApp.cpp.o -c /home/isis/Ensta/POO/IN204/rendering/CApp.cpp
 
 CMakeFiles/RT.dir/rendering/CApp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RT.dir/rendering/CApp.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/moubareckou/projetIN204/rendering/CApp.cpp > CMakeFiles/RT.dir/rendering/CApp.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/isis/Ensta/POO/IN204/rendering/CApp.cpp > CMakeFiles/RT.dir/rendering/CApp.cpp.i
 
 CMakeFiles/RT.dir/rendering/CApp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RT.dir/rendering/CApp.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/moubareckou/projetIN204/rendering/CApp.cpp -o CMakeFiles/RT.dir/rendering/CApp.cpp.s
->>>>>>> 6a439fb30db14ee1ed53fb4d26fb4b35d732637c
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/isis/Ensta/POO/IN204/rendering/CApp.cpp -o CMakeFiles/RT.dir/rendering/CApp.cpp.s
 
 # Object files for target RT
 RT_OBJECTS = \
@@ -260,6 +245,7 @@ RT_OBJECTS = \
 "CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.o" \
 "CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.o" \
 "CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.o" \
+"CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.o" \
 "CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o" \
 "CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o" \
 "CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.o" \
@@ -275,6 +261,7 @@ RT: CMakeFiles/RT.dir/dependencies/objects/cpp/Sphere.cpp.o
 RT: CMakeFiles/RT.dir/dependencies/objects/cpp/_Generic.cpp.o
 RT: CMakeFiles/RT.dir/dependencies/utils/cpp/Camera.cpp.o
 RT: CMakeFiles/RT.dir/dependencies/utils/cpp/Image.cpp.o
+RT: CMakeFiles/RT.dir/dependencies/utils/cpp/Ray.cpp.o
 RT: CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o
 RT: CMakeFiles/RT.dir/dependencies/utils/cpp/color.cpp.o
 RT: CMakeFiles/RT.dir/dependencies/utils/cpp/scene.cpp.o
@@ -283,7 +270,7 @@ RT: CMakeFiles/RT.dir/rendering/CApp.cpp.o
 RT: CMakeFiles/RT.dir/build.make
 RT: /usr/lib/x86_64-linux-gnu/libSDL2.so
 RT: CMakeFiles/RT.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/moubareckou/projetIN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable RT"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/isis/Ensta/POO/IN204/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable RT"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RT.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -295,6 +282,6 @@ CMakeFiles/RT.dir/clean:
 .PHONY : CMakeFiles/RT.dir/clean
 
 CMakeFiles/RT.dir/depend:
-	cd /home/moubareckou/projetIN204/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/moubareckou/projetIN204 /home/moubareckou/projetIN204 /home/moubareckou/projetIN204/build /home/moubareckou/projetIN204/build /home/moubareckou/projetIN204/build/CMakeFiles/RT.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/isis/Ensta/POO/IN204/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/isis/Ensta/POO/IN204 /home/isis/Ensta/POO/IN204 /home/isis/Ensta/POO/IN204/build /home/isis/Ensta/POO/IN204/build /home/isis/Ensta/POO/IN204/build/CMakeFiles/RT.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/RT.dir/depend
 

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/moubareckou/projetIN204/dependencies -I/home/moubareckou/projetIN204/dependencies/utils/hpp -I/home/moubareckou/projetIN204/dependencies/objects/hpp -I/home/moubareckou/projetIN204/interface -I/home/moubareckou/projetIN204/rendering -isystem /usr/include/SDL2
+CXX_INCLUDES = -I/home/isis/Ensta/POO/IN204/dependencies -I/home/isis/Ensta/POO/IN204/dependencies/utils/hpp -I/home/isis/Ensta/POO/IN204/dependencies/objects/hpp -I/home/isis/Ensta/POO/IN204/interface -I/home/isis/Ensta/POO/IN204/rendering -isystem /usr/include/SDL2
 
-CXX_FLAGS = -g
+CXX_FLAGS = 
 
