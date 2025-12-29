@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug RT (Linux)",
+            "type": "cppdbg",
+            "request": "launch",
+            // 1. On pointe vers le vrai exécutable créé par 'make' (pas de .exe)
+            "program": "${workspaceFolder}/build/RT", 
+            "args": [],
+            "stopAtEntry": false,
+            // 2. On se place dans le dossier build pour l'exécution
+            "cwd": "${workspaceFolder}/build", 
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+            // 3. J'ai enlevé "preLaunchTask" pour l'instant.
+            // Cela t'oblige à faire "make" dans le terminal avant de lancer le debug,
+            // mais ça évite que VS Code essaie de mal compiler ton projet.
+        }
+    ]
+}

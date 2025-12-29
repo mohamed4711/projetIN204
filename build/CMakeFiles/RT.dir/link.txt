@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/RT.dir/main.cpp.o CMakeFiles/RT.dir/dependencies/utils/cpp/Vector3.cpp.o -o RT 

@@ -26,6 +26,9 @@ Vector3& Vector3::normalize() {
     return *this;
 }
 
+double Vector3::dot(const Vector3& v) const {
+    return x * v.x + y * v.y + z * v.z;
+}
 
 Vector3 Vector3::cross(const Vector3& v) const {
     return Vector3(
@@ -48,6 +51,9 @@ Vector3& Vector3::operator+=(const Vector3& v) { x += v.x; y += v.y; z += v.z; r
 Vector3& Vector3::operator-=(const Vector3& v) { x -= v.x; y -= v.y; z -= v.z; return *this; }
 Vector3& Vector3::operator*=(double s) { x *= s; y *= s; z *= s; return *this; }
 
+double Vector3::operator[](int i) const { return (i==0) ? x : (i==1 ? y : z); }
+double& Vector3::operator[](int i) { return (i==0) ? x : (i==1 ? y : z); }
+
 
 
 
@@ -55,10 +61,8 @@ Vector3& Vector3::operator*=(double s) { x *= s; y *= s; z *= s; return *this; }
 Vector3 operator*(double s, const Vector3& v) {
     return Vector3(v.x * s, v.y * s, v.z * s);
 }
+
 std::ostream& operator<<(std::ostream& os, const Vector3& v) {
     os << "(" << v.x << ", " << v.y << ", " << v.z << ")";
     return os;
 }
-
-
-
