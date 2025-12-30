@@ -125,3 +125,16 @@ Uint32 Image::ConvertColor(const double red, const double green, const double bl
     
     return pixelColor;
 }
+
+void Image::SavePPM(const std::string& filename) {
+    std::ofstream out(filename);
+    out << "P3\n" << m_xSize << " " << m_ySize << "\n255\n";
+    for (int y = 0; y < m_ySize; ++y) {
+        for (int x = 0; x < m_xSize; ++x) {
+            out << static_cast<int>(m_rChannel[x][y]) << " "
+                << static_cast<int>(m_gChannel[x][y]) << " "
+                << static_cast<int>(m_bChannel[x][y]) << "\n";
+        }
+    }
+    out.close();
+}

@@ -21,7 +21,7 @@ class Image
     
         // Function to set pixels.
         void SetPixel(const int x, const int y, const double red, const double green, const double blue);
-        
+        void SavePPM(const std::string& filename);
         // Function to return the image for display.
         void Display();
         int GetXsize(); 

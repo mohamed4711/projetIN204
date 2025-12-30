@@ -61,9 +61,7 @@ public:
     // Accès par index (implemented inline above)
 };
 
-// --- Fonctions utilitaires externes ---
-
-
+// Fonction pour normaliser un vecteur (fonction libre)
 
 inline Vector3 unit_vector(const Vector3& v)
 {
@@ -79,5 +77,23 @@ Vector3 operator*(double scalar, const Vector3& v);
 
 // Permet d'afficher le vecteur avec std::cout << v
 std::ostream& operator<<(std::ostream& os, const Vector3& v);
+
+inline Vector3 reflect(const Vector3& v, const Vector3& n) {
+    return v - 2 * dot(v, n) * n;
+}
+
+inline Vector3 refract(const Vector3& uv, const Vector3& n, double etai_over_etat) {
+    auto cos_theta = fmin(dot(-uv, n), 1.0);
+    Vector3 r_out_perp =  etai_over_etat * (uv + cos_theta*n);
+    Vector3 r_out_parallel = -sqrt(fabs(1.0 - r_out_perp.lengthSquared())) * n;
+    return r_out_perp + r_out_parallel;
+}
+
+// Schlick's approximation for reflectance (Glass reflectivity varies by angle)
+inline double reflectance(double cosine, double ref_idx) {
+    auto r0 = (1-ref_idx) / (1+ref_idx);
+    r0 = r0*r0;
+    return r0 + (1-r0)*pow((1 - cosine),5);
+}
 
 #endif // VECTOR3_HPP

@@ -12,12 +12,12 @@ include_directories(rendering)
 # Trouver tous les fichiers .cpp dans le projet, en excluant les doublons
 file(GLOB_RECURSE SOURCES
     "main.cpp"
-    "dependencies/utils/**/*.cpp"
-    "dependencies/camera/**/*.cpp"
-    "dependencies/objects/**/*.cpp"
-    "dependencies/lights/**/*.cpp"
-    "dependencies/Scene/**/*.cpp"
-    "interface/**/*.cpp"
+    "dependencies/camera/cpp/*.cpp"
+    "dependencies/lights/cpp/*.cpp"
+    "dependencies/objects/cpp/*.cpp"
+    "dependencies/scene/cpp/*.cpp"
+    "dependencies/utils/cpp/*.cpp"
+    "dependencies/RTMotors/cpp/*.cpp"  # <-- AJOUTER CETTE LIGNE
     "rendering/*.cpp"
 )
 
