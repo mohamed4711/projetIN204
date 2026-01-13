@@ -2,3 +2,6 @@ build/
 *.o
 *.d
 RT
+.vscode/
+prog.ex
+test_camera

@@ -2,6 +2,9 @@
 #define GENERIC_OBJECT_HPP
 
 #include "camera/hpp/Ray.hpp"
+#include <memory>
+
+class Material; // Forward declaration
 
 class hit_record {
   public:
@@ -9,6 +12,7 @@ class hit_record {
     Vector3 normal; // t p= orig +t*direc
     double t;
     bool front_face; // front surface(true )
+    std::shared_ptr<Material> mat_ptr;
     Vector3 LocalColor; 
     double ColorIntensity; 
 

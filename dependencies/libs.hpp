@@ -26,7 +26,7 @@ inline double degrees_to_radians(double degrees) {
 // Common Headers
 
 #include "utils/hpp/Color.hpp"
-#include "Camera/hpp/Ray.hpp"
+#include "camera/hpp/Ray.hpp"
 #include "utils/hpp/Vector3.hpp"
 #include "utils/hpp/interval.hpp"
 
