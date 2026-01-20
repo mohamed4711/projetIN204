@@ -1,5 +1,6 @@
 #include "CApp.hpp"
 #include <iostream>
+#include "../dependencies/scene/hpp/Sceneloader.hpp"
 
 CApp::CApp() {
     isRunning = true;
@@ -29,6 +30,8 @@ int CApp::OnExecute() {
 
     // --- RENDER ONCE HERE ---
     if (!m_isRendered) {
+        // Reviens à ça, c'est le plus sûr :
+        SceneLoader::LoadJSON("../SceneFromJson/Scene01.json", m_scene);
         std::cout << "Starting Render..." << std::endl;
         m_renderer.Render(m_scene, m_image); 
     
@@ -49,7 +52,7 @@ int CApp::OnExecute() {
     return 0;
 }
 
-// ... Keep OnEvent, OnLoop as they were ...
+
 
 void CApp::OnEvent(SDL_Event *event) {
     if (event->type == SDL_QUIT) isRunning = false;
@@ -61,7 +64,7 @@ void CApp::OnRender()
     SDL_SetRenderDrawColor(pRenderer, 255, 255, 255, 255);
     SDL_RenderClear(pRenderer);
     
-    // On ne lance le calcul (très lourd) qu'une seule fois
+    
     if (!m_isRendered) {
         m_renderer.Render(m_scene, m_image);
         m_isRendered = true;

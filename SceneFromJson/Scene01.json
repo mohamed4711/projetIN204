@@ -1,0 +1,8 @@
+{
+  "objects": [
+    { "type": "plane", "point": [0, 0, 0], "normal": [0, 1, 0], "color": [0.5, 1.0, 0.5], "material_type": 0 },
+    { "type": "sphere", "center": [0, 1, 0], "radius": 1.0, "color": [1.0, 1.0, 1.0], "material_type": 2 },
+    { "type": "sphere", "center": [4, 1, 0], "radius": 1.0, "color": [0.7, 0.6, 0.5], "material_type": 1 },
+    { "type": "sphere", "center": [-4, 1, 0], "radius": 1.0, "color": [0.8, 0.2, 0.1], "material_type": 0 }
+  ]
+}
