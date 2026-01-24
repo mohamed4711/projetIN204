@@ -113,9 +113,9 @@ void Image::InitTexture()
 Uint32 Image::ConvertColor(const double red, const double green, const double blue)
 {
     // Convert colours to unsigned char.
-    unsigned char r = static_cast<unsigned char>(red);
-    unsigned char g = static_cast<unsigned char>(green);
-    unsigned char b = static_cast<unsigned char>(blue);
+    unsigned char r = static_cast<unsigned char>(std::min(255.0, std::max(0.0, red)));
+    unsigned char g = static_cast<unsigned char>(std::min(255.0, std::max(0.0, green)));
+    unsigned char b = static_cast<unsigned char>(std::min(255.0, std::max(0.0, blue)));
 
     #if SDL_BYTEORDER == SDL_BIG_ENDIAN
         Uint32 pixelColor = (b << 24) + (g << 16) + (r << 8) + 255;
