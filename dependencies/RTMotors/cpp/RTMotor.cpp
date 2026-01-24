@@ -60,7 +60,6 @@ public:
         const auto& lights = scene.GetLights();
 
         std::cout << "Rendering with multiple lights..." << std::endl;
-        samples_per_pixel=50; 
         for (int j = 0; j < ny; ++j) {
             if (j % 10 == 0) std::cout << "Lines remaining: " << (ny - j) << std::endl;
             for (int i = 0; i < nx; ++i) {
