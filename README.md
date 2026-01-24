@@ -44,11 +44,10 @@ make
 plan d'action sur l'état actuel  pour finir le projet :
 
 ### Géométrie (Rapide)
-- [ ] Créer `dependencies/objects/hpp/Plane.hpp` (Plan infini).
 - [ ] Créer `dependencies/objects/hpp/Box.hpp` (Cube).
 
 ### Parser (Critique)
-- [ ] Créer une classe `SceneLoader` qui lit un fichier texte de description de scène.
+
 - [ ] Modifier `main.cpp` pour prendre le nom du fichier scène en argument (ex: `./RT scene.txt`).
 
 **Exemple de format de fichier attendu :**

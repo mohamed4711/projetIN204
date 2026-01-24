@@ -4,7 +4,7 @@
 #include <SDL2/SDL.h>
 #include "../dependencies/scene/hpp/scene.hpp"
 #include "../dependencies/utils/hpp/Image.hpp" 
-#include "RTMotors/cpp/RTMotorOpenMP.cpp" // Inclusion du moteur
+#include "RTMotors/cpp/RTMotor.cpp" 
 
 class CApp
 {
@@ -22,7 +22,7 @@ class CApp
     private:
         Image m_image;
         Scene m_scene;      // La donnée
-        RendererOpenMP m_renderer;// Le moteur
+        DefaultRenderer m_renderer;// Le moteur avec lumières
         
         bool isRunning;
         SDL_Window *pWindow;

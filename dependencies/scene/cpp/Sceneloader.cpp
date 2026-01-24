@@ -5,6 +5,7 @@
 #include "../../materials/hpp/Metal.hpp"
 #include "../../materials/hpp/Dielectric.hpp"
 #include "../../objects/hpp/Plan.hpp"
+#include "../../lights/hpp/PointLight.hpp"
 
 #include <iostream>
 #include <fstream>
@@ -27,6 +28,14 @@ void SceneLoader::LoadJSON(const std::string& filename, Scene& scene) {
             std::string type = item["type"];
             if (type == "sphere") ParseSphereJSON(item, scene);
             else if (type == "plane") ParsePlaneJSON(item, scene);
+        }
+
+        // Charger les lumières
+        if (data.contains("lights")) {
+            for (const auto& item : data["lights"]) {
+                std::string type = item["type"];
+                if (type == "point") ParsePointLightJSON(item, scene);
+            }
         }
         std::cout << "Scene JSON chargee !" << std::endl;
     } catch (const std::exception& e) {
@@ -62,4 +71,11 @@ void SceneLoader::ParsePlaneJSON(const json& j, Scene& scene) {
     else m = std::make_shared<Dielectric>(1.5);
 
     scene.AddObject(std::make_shared<Plan>(pt, norm, m));
+}
+
+void SceneLoader::ParsePointLightJSON(const json& j, Scene& scene) {
+    auto pos = LoadVec3(j["position"]);
+    auto intensity = LoadVec3(j["intensity"]);
+    
+    scene.AddLight(std::make_shared<PointLight>(pos, intensity));
 }

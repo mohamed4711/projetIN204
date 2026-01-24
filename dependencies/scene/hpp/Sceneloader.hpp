@@ -9,17 +9,16 @@ using json = nlohmann::json;
 
 class SceneLoader {
 public:
-    static void Load(const std::string& filename, Scene& scene);
-    static void LoadJSON(const std::string& filename, Scene& scene); // Nouvelle méthode
+    
+    static void LoadJSON(const std::string& filename, Scene& scene); // pour charger depuis le fichier json 
 
 private:
-    // Méthodes existantes pour le TXT
-    static void ParseSphere(std::stringstream& ss, Scene& scene);
-    static void ParsePlane(std::stringstream& ss, Scene& scene);
+    
 
-    // Nouvelles méthodes pour le JSON
+    //méthodes pour le JSON
     static void ParseSphereJSON(const json& j, Scene& scene);
     static void ParsePlaneJSON(const json& j, Scene& scene);
+    static void ParsePointLightJSON(const json& j, Scene& scene);
 };
 
 #endif

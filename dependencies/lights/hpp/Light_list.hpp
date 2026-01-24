@@ -23,13 +23,19 @@ class Light_list : public Light {
         Lights_list.push_back(light);
     }
 
-    bool computeIllumination( hit_record &hitPoint, hittable_list Objects, const std::shared_ptr<hittable>& CurrentObject) override {
+    bool computeIllumination(hit_record &hitPoint, const hittable_list &Objects, Vector3 &outColor) const override {
+        Vector3 tempColor(0, 0, 0);
+        outColor = Vector3(0, 0, 0); // Reset de la couleur de sortie
+        bool isAnyLightHitting = false;
+
         for (const auto& light : Lights_list) {
-            if (light->computeIllumination(hitPoint, Objects, CurrentObject)) {
-                return true;
+            // On cumule l'intensité de chaque lampe
+            if (light->computeIllumination(hitPoint, Objects, tempColor)) {
+                outColor += tempColor; 
+                isAnyLightHitting = true;
             }
         }
-        return false;
+        return isAnyLightHitting;
     }
 };
 
