@@ -18,6 +18,9 @@ private:
     //méthodes pour le JSON
     static void ParseSphereJSON(const json& j, Scene& scene);
     static void ParsePlaneJSON(const json& j, Scene& scene);
+    static void ParseCylinderJSON(const json& j, Scene& scene);
+    static void ParseConeJSON(const json& j, Scene& scene);
+    static void ParseTriangleJSON(const json& j, Scene& scene);
     static void ParsePointLightJSON(const json& j, Scene& scene);
 };
 
