@@ -12,6 +12,10 @@ class Renderer {
 public:
     Renderer() : max_depth(50), samples_per_pixel(10) {} // Mettre samples_per_pixel à 50 ou 100 pour haute qualité
     virtual void Render(const Scene& scene, Image& image) = 0;
+    
+    // Setters pour configuration
+    void SetMaxDepth(int depth) { max_depth = depth; }
+    void SetSamplesPerPixel(int samples) { samples_per_pixel = samples; }
 
 protected:
     Vector3 RayColor(const Ray& r, const hittable_list& world, int depth){
@@ -35,6 +39,17 @@ protected:
     }
     int max_depth;
     int samples_per_pixel;
+};
+
+// Forward declaration for DefaultRenderer
+class DefaultRenderer : public Renderer {
+public:
+    DefaultRenderer();
+    DefaultRenderer(const DefaultRenderer& other);
+    void Render(const Scene& scene, Image& image) override;
+    
+private:
+    Vector3 RayColor(const Ray& r, const hittable_list& world, const class Light_list& lights, int depth);
 };
 
 #endif
