@@ -1,30 +1,44 @@
 #ifndef INTERVAL_H
 #define INTERVAL_H
 
+#include <limits> // for std::numeric_limits
+
 class interval {
   public:
     double min, max;
 
-    interval() : min(+infinity), max(-infinity) {} // Default interval is empty
+    // Use standard infinity for empty interval
+    interval() : min(+std::numeric_limits<double>::infinity()), 
+                 max(-std::numeric_limits<double>::infinity()) {}
 
     interval(double min, double max) : min(min), max(max) {}
 
-    double size() const {
-        return max - min;
+    // Added a constructor to combine two intervals (useful for BVH)
+    interval(const interval& a, const interval& b) {
+        min = a.min < b.min ? a.min : b.min;
+        max = a.max > b.max ? a.max : b.max;
     }
 
-    bool contains(double x) const {
-        return min <= x && x <= max;
-    }
+    double size() const { return max - min; }
 
-    bool surrounds(double x) const {
-        return min < x && x < max;
+    bool contains(double x) const { return min <= x && x <= max; }
+
+    bool surrounds(double x) const { return min < x && x < max; }
+
+    // Utility to clamp a value to the interval
+    double clamp(double x) const {
+        if (x < min) return min;
+        if (x > max) return max;
+        return x;
     }
 
     static const interval empty, universe;
 };
 
-const interval interval::empty    = interval(+infinity, -infinity);
-const interval interval::universe = interval(-infinity, +infinity);
+// Correct initialization of static constants
+inline const interval interval::empty    = interval(+std::numeric_limits<double>::infinity(), 
+                                             -std::numeric_limits<double>::infinity());
+inline const interval interval::universe = interval(-std::numeric_limits<double>::infinity(), 
+                                             +std::numeric_limits<double>::infinity());
 
 #endif

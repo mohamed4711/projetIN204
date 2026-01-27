@@ -26,6 +26,21 @@ public:
         : base(base_), axis(axis_.normalize()), radius(r), height(h), mat_ptr(m) {}
 
     virtual bool hit(const Ray& r, double* ray_tmin, double* ray_tmax, hit_record& rec) const override;
+
+    aabb bounding_box() const override {
+    Point3 top = base + axis * height;
+    
+    // simplified bounding box around cylinder 
+    double min_x = fmin(base.x, top.x) - radius;
+    double min_y = fmin(base.y, top.y) - radius;
+    double min_z = fmin(base.z, top.z) - radius;
+
+    double max_x = fmax(base.x, top.x) + radius;
+    double max_y = fmax(base.y, top.y) + radius;
+    double max_z = fmax(base.z, top.z) + radius;
+
+    return aabb(Point3(min_x, min_y, min_z), Point3(max_x, max_y, max_z));
+}
 };
 
 #endif

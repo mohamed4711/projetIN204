@@ -92,6 +92,13 @@ public:
         
         return true;
     }
+
+    aabb bounding_box() const override {
+    return aabb(
+        Point3(std::fmin(p_min.x, p_max.x) - 0.001, std::fmin(p_min.y, p_max.y) - 0.001, std::fmin(p_min.z, p_max.z) - 0.001),
+        Point3(std::fmax(p_min.x, p_max.x) + 0.001, std::fmax(p_min.y, p_max.y) + 0.001, std::fmax(p_min.z, p_max.z) + 0.001)
+    );
+}
 };
 
 #endif

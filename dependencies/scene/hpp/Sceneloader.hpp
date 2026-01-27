@@ -18,6 +18,7 @@ public:
     
     // loads scene from JSON file (aspect_ratio needed for camera setup)
     static void LoadJSON(const std::string& filename, Scene& scene, double aspect_ratio = 16.0/9.0);
+    static void LoadJSONBVH(const std::string& filename, Scene& scene, double aspect_ratio = 16.0/9.0);
 
 private:
     

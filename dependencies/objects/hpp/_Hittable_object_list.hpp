@@ -41,8 +41,25 @@ class hittable_list : public hittable {
                 rec = temp_rec;
             }
         }
-
+    
         return hit_anything;
+    }
+
+    aabb bounding_box() const override {
+        if (objects.empty()) return aabb(interval::empty, interval::empty, interval::empty);
+
+        aabb temp_box;
+        bool first_box = true;
+
+        for (const auto& object : objects) {
+            if (first_box) {
+                temp_box = object->bounding_box();
+                first_box = false;
+            } else {
+                temp_box = aabb(temp_box, object->bounding_box()); // Union des boîtes
+            }
+        }
+        return temp_box;
     }
 };
 

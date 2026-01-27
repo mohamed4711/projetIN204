@@ -5,19 +5,19 @@
 */
 
 #include "../hpp/Sceneloader.hpp"
-
-#include "../../objects/hpp/Sphere.hpp"
-#include "../../objects/hpp/Cylinder.hpp"
-#include "../../objects/hpp/Cone.hpp"
-#include "../../objects/hpp/Triangle.hpp"
-#include "../../objects/hpp/Parallepiped.hpp"
-#include "../../materials/hpp/Lambertian.hpp"
-#include "../../materials/hpp/Metal.hpp"
-#include "../../materials/hpp/Dielectric.hpp"
-#include "../../objects/hpp/Plan.hpp"
-#include "../../lights/hpp/PointLight.hpp"
-#include "../../lights/hpp/DirectionalLight.hpp"
-#include "../../lights/hpp/SpotLight.hpp"
+#include "objects/hpp/_bvh_node.hpp"
+#include "objects/hpp/Sphere.hpp"
+#include "objects/hpp/Cylinder.hpp"
+#include "objects/hpp/Cone.hpp"
+#include "objects/hpp/Triangle.hpp"
+#include "objects/hpp/Parallepiped.hpp"
+#include "materials/hpp/Lambertian.hpp"
+#include "materials/hpp/Metal.hpp"
+#include "materials/hpp/Dielectric.hpp"
+#include "objects/hpp/Plan.hpp"
+#include "lights/hpp/PointLight.hpp"
+#include "lights/hpp/DirectionalLight.hpp"
+#include "lights/hpp/SpotLight.hpp"
 
 #include <iostream>
 #include <fstream>
@@ -67,6 +67,57 @@ void SceneLoader::LoadJSON(const std::string& filename, Scene& scene, double asp
     }
 }
 
+
+void SceneLoader::LoadJSONBVH(const std::string& filename, Scene& scene, double aspect_ratio) {
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "ERROR: JSON file not found " << filename << std::endl;
+        return;
+    }
+
+    try {
+        json data = json::parse(file);
+        std::cout << "Loading JSON..." << std::endl;
+
+        if (data.contains("camera")) {
+            ParseCameraJSON(data["camera"], scene, aspect_ratio);
+        }
+
+        // 1. Chargement des primitives
+        for (const auto& item : data["objects"]) {
+            std::string type = item["type"];
+            if (type == "sphere") ParseSphereJSON(item, scene);
+            else if (type == "plane") ParsePlaneJSON(item, scene);
+            else if (type == "cylinder") ParseCylinderJSON(item, scene);
+            else if (type == "cone") ParseConeJSON(item, scene);
+            else if (type == "triangle") ParseTriangleJSON(item, scene);
+            else if (type == "parallepiped" || type == "box") ParseParallelepipedJSON(item, scene);
+        }
+
+        // 2. OPTIMISATION : Construction du BVH
+        auto& world = const_cast<hittable_list&>(scene.GetObjects());
+        if (!world.objects.empty()) {
+            std::cout << "Building BVH for " << world.objects.size() << " objects..." << std::endl;
+            auto bvh_root = std::make_shared<bvh_node>(world);
+            world.clear();
+            world.add(bvh_root);
+            std::cout << "BVH hierarchy constructed." << std::endl;
+        }
+
+        // 3. Chargement des lumières
+        if (data.contains("lights")) {
+            for (const auto& item : data["lights"]) {
+                std::string type = item["type"];
+                if (type == "point") ParsePointLightJSON(item, scene);
+                else if (type == "directional") ParseDirectionalLightJSON(item, scene);
+                else if (type == "spot") ParseSpotLightJSON(item, scene);
+            }
+        }
+        std::cout << "JSON scene loaded!" << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << "JSON parsing error: " << e.what() << std::endl;
+    }
+}
 // helper to parse Vector3 from JSON array
 Vector3 LoadVec3(const json& j) { return Vector3(j[0], j[1], j[2]); }
 

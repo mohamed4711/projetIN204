@@ -8,6 +8,7 @@
 #define GENERIC_OBJECT_HPP
 
 #include "camera/hpp/Ray.hpp"
+#include "objects/hpp/_AABB.hpp"
 #include <memory>
 
 class Material;
@@ -36,6 +37,9 @@ class hittable {
     virtual ~hittable() = default;
     // returns true if ray hits object within [ray_tmin, ray_tmax]
     virtual bool hit(const Ray& r, double *ray_tmin, double* ray_tmax, hit_record& rec) const = 0;
+
+    // return the bounding box of the object
+    virtual aabb bounding_box() const = 0;
 };
 
 #endif

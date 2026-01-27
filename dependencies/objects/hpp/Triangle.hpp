@@ -29,6 +29,20 @@ public:
     }
 
     virtual bool hit(const Ray& r, double* ray_tmin, double* ray_tmax, hit_record& rec) const override;
+
+    aabb bounding_box() const override {
+    double min_x = fmin(fmin(v0.x, v1.x), v2.x);
+    double min_y = fmin(fmin(v0.y, v1.y), v2.y);
+    double min_z = fmin(fmin(v0.z, v1.z), v2.z);
+
+    double max_x = fmax(fmax(v0.x, v1.x), v2.x);
+    double max_y = fmax(fmax(v0.y, v1.y), v2.y);
+    double max_z = fmax(fmax(v0.z, v1.z), v2.z);
+
+    // On ajoute une petite marge (0.0001) pour éviter les boîtes plates (ex: triangle vertical)
+    return aabb(Point3(min_x - 0.0001, min_y - 0.0001, min_z - 0.0001), 
+                Point3(max_x + 0.0001, max_y + 0.0001, max_z + 0.0001));
+}
 };
 
 #endif

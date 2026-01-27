@@ -19,6 +19,12 @@ public:
         : point(p), normal(unit_vector(n)), mat_ptr(m) {}
 
     virtual bool hit(const Ray& r, double* ray_tmin, double* ray_tmax, hit_record& rec) const override;
+
+   
+    aabb bounding_box() const override {
+    double limit = 1e8; 
+    return aabb(Point3(-limit, -limit, -limit), Point3(limit, limit, limit));
+}
 };
 
 #endif

@@ -44,3 +44,4 @@ bool Triangle::hit(const Ray& r, double* ray_tmin, double* ray_tmax, hit_record&
     
     return true;
 }
+
