@@ -10,8 +10,9 @@
 #include <cmath>
 #include <random>
 #include <cstdlib>
-#include "camera/hpp/Ray.hpp"
+#include "../../camera/hpp/Ray.hpp"
 #include "../../utils/hpp/Vector3.hpp"
+#include "../../objects/hpp/_Generic.hpp"
 
 // thread-safe random number generator
 inline double random_double() { 

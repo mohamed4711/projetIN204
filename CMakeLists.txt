@@ -31,6 +31,7 @@ target_link_libraries(imgui PUBLIC SDL2::SDL2)
 file(GLOB_RECURSE SOURCES_DEPS 
     "${CMAKE_SOURCE_DIR}/dependencies/camera/cpp/*.cpp"
     "${CMAKE_SOURCE_DIR}/dependencies/lights/cpp/*.cpp"
+    "${CMAKE_SOURCE_DIR}/dependencies/materials/cpp/*.cpp"
     "${CMAKE_SOURCE_DIR}/dependencies/objects/cpp/*.cpp"
     "${CMAKE_SOURCE_DIR}/dependencies/RTMotors/cpp/*.cpp"
     "${CMAKE_SOURCE_DIR}/dependencies/scene/cpp/*.cpp"

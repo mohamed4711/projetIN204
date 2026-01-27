@@ -11,7 +11,7 @@
 #include <vector>
 #include "../dependencies/utils/hpp/Image.hpp"
 #include "../dependencies/scene/hpp/scene.hpp"
-#include "../dependencies/RTMotors/hpp/RTMotor.hpp" 
+#include "../dependencies/RTMotors/hpp/SimpleRenderer.hpp" 
 
 
 #include "imgui.h"
