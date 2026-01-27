@@ -41,16 +41,7 @@ make
 
 ## To-Do List
 
-plan d'action sur l'état actuel  pour finir le projet :
-
-### Géométrie (Rapide)
-- [ ] Créer `dependencies/objects/hpp/Box.hpp` (Cube).
-
-### Parser (Critique)
-
-- [ ] Modifier `main.cpp` pour prendre le nom du fichier scène en argument (ex: `./RT scene.txt`).
-
-**Exemple de format de fichier attendu :**
-```text
-sphere x y z radius r g b material_type
-plane x y z nx ny nz r g b material_type
+Gérer les textures (Texture Mapping / UV)
+Implémenter la sauvegarde d'image en PNG et JPG
+Ajouter des sources de lumière complexes (Spotlight, Directionnelle)
+Rédiger l'analyse fonctionnelle et architecturale
