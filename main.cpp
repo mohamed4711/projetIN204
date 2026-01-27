@@ -1,9 +1,9 @@
 #include <iostream>
-#include"rendering/CApp.hpp"
+#include "rendering/RayTracerApp.hpp"
 #include "dependencies/utils/hpp/Vector3.hpp"
 
 
 int main( ){
-   CApp test; 
-   test.OnExecute();
+   RayTracerApp app; 
+   app.OnExecute();
 }
