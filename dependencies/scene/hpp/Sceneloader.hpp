@@ -16,8 +16,8 @@ using json = nlohmann::json;
 class SceneLoader {
 public:
     
-    // loads scene from JSON file
-    static void LoadJSON(const std::string& filename, Scene& scene);
+    // loads scene from JSON file (aspect_ratio needed for camera setup)
+    static void LoadJSON(const std::string& filename, Scene& scene, double aspect_ratio = 16.0/9.0);
 
 private:
     
@@ -31,6 +31,9 @@ private:
     static void ParsePointLightJSON(const json& j, Scene& scene);
     static void ParseDirectionalLightJSON(const json& j, Scene& scene);
     static void ParseSpotLightJSON(const json& j, Scene& scene);
+    
+    // camera configuration parser
+    static void ParseCameraJSON(const json& j, Scene& scene, double aspect_ratio);
 };
 
 #endif

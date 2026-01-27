@@ -25,7 +25,7 @@
 
 
 
-void SceneLoader::LoadJSON(const std::string& filename, Scene& scene) {
+void SceneLoader::LoadJSON(const std::string& filename, Scene& scene, double aspect_ratio) {
     std::ifstream file(filename);
     if (!file.is_open()) {
         std::cerr << "ERROR: JSON file not found " << filename << std::endl;
@@ -35,6 +35,11 @@ void SceneLoader::LoadJSON(const std::string& filename, Scene& scene) {
     try {
         json data = json::parse(file);
         std::cout << "Loading JSON..." << std::endl;
+
+        // parse camera configuration if present
+        if (data.contains("camera")) {
+            ParseCameraJSON(data["camera"], scene, aspect_ratio);
+        }
 
         // parse all objects
         for (const auto& item : data["objects"]) {
@@ -177,4 +182,29 @@ void SceneLoader::ParseParallelepipedJSON(const json& j, Scene& scene) {
     else m = std::make_shared<Dielectric>(1.5);
 
     scene.AddObject(std::make_shared<Parallepiped>(p_min, p_max, m));
+}
+
+void SceneLoader::ParseCameraJSON(const json& j, Scene& scene, double aspect_ratio) {
+    // camera position (required)
+    Point3 lookfrom = j.contains("position") ? LoadVec3(j["position"]) : Point3(0, -10, 2);
+    
+    // target point (required)
+    Point3 lookat = j.contains("lookat") ? LoadVec3(j["lookat"]) : Point3(0, 0, 0);
+    
+    // up vector (optional, default Y-up)
+    Vector3 vup = j.contains("up") ? LoadVec3(j["up"]) : Vector3(0, 0, 1);
+    
+    // field of view in degrees (optional, default 60)
+    double vfov = j.value("fov", 60.0);
+    
+    // aperture for depth of field (optional, default 0 = no DOF)
+    double aperture = j.value("aperture", 0.0);
+    
+    // focus distance (optional, default = distance to lookat)
+    double focus_dist = j.value("focus_distance", (lookfrom - lookat).length());
+    
+    scene.SetupCamera(lookfrom, lookat, vup, vfov, aspect_ratio, aperture, focus_dist);
+    
+    std::cout << "Camera configured: pos(" << lookfrom.x << "," << lookfrom.y << "," << lookfrom.z 
+              << ") -> target(" << lookat.x << "," << lookat.y << "," << lookat.z << ")" << std::endl;
 }

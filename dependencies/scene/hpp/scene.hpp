@@ -31,6 +31,15 @@ public:
         s_Lights.add(light); 
     }
 
+    // configure camera from parameters
+    void SetupCamera(Point3 lookfrom, Point3 lookat, Vector3 vup, 
+                     double vfov, double aspect_ratio, double aperture, double focus_dist) {
+        s_camera.Setup(lookfrom, lookat, vup, vfov, aspect_ratio, aperture, focus_dist);
+    }
+
+    // direct camera access for setup
+    Camera& GetCameraMutable() { return s_camera; }
+
     // reset scene to empty state
     void Clear() {
         s_ObjectList.clear();
