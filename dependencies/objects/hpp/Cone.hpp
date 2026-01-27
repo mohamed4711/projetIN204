@@ -1,3 +1,9 @@
+/*
+    Cone.hpp
+    Cone primitive with apex, axis, angle and height
+    Includes base cap intersection
+*/
+
 #ifndef CONE_HPP
 #define CONE_HPP
 
@@ -8,10 +14,10 @@
 
 class Cone : public hittable {
 public:
-    Point3 apex;           // Sommet du cône
-    Vector3 axis;          // Axe du cône (pointe vers la base, normalisé)
-    double angle;          // Angle du cône (en radians)
-    double height;         // Hauteur du cône
+    Point3 apex;      // tip of the cone
+    Vector3 axis;     // cone axis direction (normalized, points to base)
+    double angle;     // half-angle in radians
+    double height;    // cone height from apex to base
     std::shared_ptr<Material> mat_ptr;
 
     Cone() {}

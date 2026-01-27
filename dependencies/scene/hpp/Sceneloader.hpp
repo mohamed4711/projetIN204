@@ -1,3 +1,9 @@
+/*
+    Sceneloader.hpp
+    Loads scene from JSON file
+    Parses objects, materials and lights
+*/
+
 #ifndef SCENELOADER_HPP
 #define SCENELOADER_HPP
 
@@ -10,12 +16,12 @@ using json = nlohmann::json;
 class SceneLoader {
 public:
     
-    static void LoadJSON(const std::string& filename, Scene& scene); // pour charger depuis le fichier json 
+    // loads scene from JSON file
+    static void LoadJSON(const std::string& filename, Scene& scene);
 
 private:
     
-
-    //méthodes pour le JSON
+    // parsers for each object type
     static void ParseSphereJSON(const json& j, Scene& scene);
     static void ParsePlaneJSON(const json& j, Scene& scene);
     static void ParseCylinderJSON(const json& j, Scene& scene);

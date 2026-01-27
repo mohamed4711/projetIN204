@@ -1,3 +1,9 @@
+/*
+    Sceneloader.cpp
+    JSON scene parser implementation
+    Supports spheres, planes, cylinders, cones, triangles and point lights
+*/
+
 #include "../hpp/Sceneloader.hpp"
 
 #include "../../objects/hpp/Sphere.hpp"
@@ -19,14 +25,15 @@
 void SceneLoader::LoadJSON(const std::string& filename, Scene& scene) {
     std::ifstream file(filename);
     if (!file.is_open()) {
-        std::cerr << "ERREUR JSON: Fichier introuvable " << filename << std::endl;
+        std::cerr << "ERROR: JSON file not found " << filename << std::endl;
         return;
     }
 
     try {
         json data = json::parse(file);
-        std::cout << "Chargement JSON..." << std::endl;
+        std::cout << "Loading JSON..." << std::endl;
 
+        // parse all objects
         for (const auto& item : data["objects"]) {
             std::string type = item["type"];
             if (type == "sphere") ParseSphereJSON(item, scene);
@@ -36,26 +43,27 @@ void SceneLoader::LoadJSON(const std::string& filename, Scene& scene) {
             else if (type == "triangle") ParseTriangleJSON(item, scene);
         }
 
-        // Charger les lumières
+        // parse lights if present
         if (data.contains("lights")) {
             for (const auto& item : data["lights"]) {
                 std::string type = item["type"];
                 if (type == "point") ParsePointLightJSON(item, scene);
             }
         }
-        std::cout << "Scene JSON chargee !" << std::endl;
+        std::cout << "JSON scene loaded!" << std::endl;
     } catch (const std::exception& e) {
-        std::cerr << "Erreur parsing JSON: " << e.what() << std::endl;
+        std::cerr << "JSON parsing error: " << e.what() << std::endl;
     }
 }
 
+// helper to parse Vector3 from JSON array
 Vector3 LoadVec3(const json& j) { return Vector3(j[0], j[1], j[2]); }
 
 void SceneLoader::ParseSphereJSON(const json& j, Scene& scene) {
     auto center = LoadVec3(j["center"]);
     double r = j["radius"];
     auto col = LoadVec3(j["color"]);
-    int mat = j["material_type"];
+    int mat = j["material_type"];  // 0=lambertian, 1=metal, 2=dielectric
 
     std::shared_ptr<Material> m;
     if (mat == 0) m = std::make_shared<Lambertian>(col);
@@ -85,6 +93,7 @@ void SceneLoader::ParsePointLightJSON(const json& j, Scene& scene) {
     
     scene.AddLight(std::make_shared<PointLight>(pos, intensity));
 }
+
 void SceneLoader::ParseCylinderJSON(const json& j, Scene& scene) {
     auto base = LoadVec3(j["base"]);
     auto axis = LoadVec3(j["axis"]);
@@ -105,7 +114,7 @@ void SceneLoader::ParseConeJSON(const json& j, Scene& scene) {
     auto apex = LoadVec3(j["apex"]);
     auto axis = LoadVec3(j["axis"]);
     double angle_deg = j["angle"];
-    double angle = angle_deg * M_PI / 180.0;
+    double angle = angle_deg * M_PI / 180.0;  // convert degrees to radians
     double height = j["height"];
     auto col = LoadVec3(j["color"]);
     int mat = j["material_type"];

@@ -1,3 +1,9 @@
+/*
+    Cylinder.hpp
+    Cylinder primitive with base center, axis, radius and height
+    Includes top and bottom cap intersections
+*/
+
 #ifndef CYLINDER_HPP
 #define CYLINDER_HPP
 
@@ -8,8 +14,8 @@
 
 class Cylinder : public hittable {
 public:
-    Point3 base;           // Centre de la base
-    Vector3 axis;          // Axe du cylindre (normalisé)
+    Point3 base;      // center of bottom cap
+    Vector3 axis;     // cylinder axis (normalized)
     double radius;
     double height;
     std::shared_ptr<Material> mat_ptr;

@@ -1,3 +1,9 @@
+/*
+    CApp.hpp
+    Main application class using SDL2 and ImGui
+    Handles window, events and rendering loop
+*/
+
 #ifndef CAPP_HPP
 #define CAPP_HPP
 
@@ -15,30 +21,30 @@
 class CApp {
 public:
     CApp();
-    int OnExecute();
-    bool OnInit();
-    void OnEvent(SDL_Event* event);
-    void OnLoop();
-    void OnRender();
-    void OnExit();
+    int OnExecute();    // main loop entry point
+    bool OnInit();      // initialize SDL and ImGui
+    void OnEvent(SDL_Event* event);  // handle input events
+    void OnLoop();      // update logic
+    void OnRender();    // draw frame
+    void OnExit();      // cleanup resources
 
 private:
     bool isRunning;
     SDL_Window* pWindow;
     SDL_Renderer* pRenderer;
     
-    // Moteur et Scène
+    // rendering engine and scene
     Image m_image;
     Scene m_scene;
     
     DefaultRenderer m_renderer; 
 
-    // État de l'interface (pour les sliders)
+    // UI state (sliders)
     int m_samples = 5;
     int m_depth = 5;
     bool m_renderRequested = false;
     
-    // Chemin du fichier JSON chargé
+    // path to loaded JSON scene file
     std::string m_jsonFilePath = "../SceneFromJson/Scene01.json";
 };
 

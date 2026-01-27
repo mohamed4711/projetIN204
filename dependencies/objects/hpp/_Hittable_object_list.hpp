@@ -1,3 +1,9 @@
+/*
+    _Hittable_object_list.hpp
+    Container for scene objects
+    Finds the closest intersection among all objects
+*/
+
 #ifndef HITTABLE_OBJECT_LIST_HPP
 #define HITTABLE_OBJECT_LIST_HPP
 
@@ -22,6 +28,7 @@ class hittable_list : public hittable {
         objects.push_back(object);
     }
 
+    // tests all objects, returns closest hit
     bool hit(const Ray& r, double *ray_tmin, double *ray_tmax, hit_record& rec) const override {
         hit_record temp_rec;
         bool hit_anything = false;

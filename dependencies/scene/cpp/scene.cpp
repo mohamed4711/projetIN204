@@ -1,3 +1,8 @@
+/*
+    scene.cpp
+    Scene constructor with default camera setup
+*/
+
 #include "../hpp/scene.hpp"
 #include "objects/hpp/Sphere.hpp"
 #include "materials/hpp/Material.hpp"
@@ -11,7 +16,7 @@
 Scene::Scene() {
    
     
-    // Configuration Caméra par défaut (on peux charger ca  apartir du fichier json plus tard )
+    // default camera configuration (can be loaded from JSON later)
     Point3 lookfrom(20,0,3);
     Point3 lookat(0,0,0);
     Vector3 vup(0,0,1);

@@ -1,3 +1,9 @@
+/*
+    scene.hpp
+    Scene container holding camera, objects and lights
+    Central structure for the ray tracer
+*/
+
 #ifndef SCENE_H
 #define SCENE_H
 
@@ -11,13 +17,13 @@ class Scene {
 public:
     Scene(); 
 
-    // Accesseurs
+    // getters
     const Camera& GetCamera() const { return s_camera; }
     const hittable_list& GetObjects() const { return s_ObjectList; }
     const Light_list& GetLights() const { return s_Lights; }
     
    
-    // Permet d'ajouter un objet dynamiquement
+    // add objects and lights to the scene
     void AddObject(std::shared_ptr<hittable> object) { 
         s_ObjectList.add(object); 
     }
@@ -25,7 +31,7 @@ public:
         s_Lights.add(light); 
     }
 
-    // Permet de vider la scène 
+    // reset scene to empty state
     void Clear() {
         s_ObjectList.clear();
         s_Lights.clear();
@@ -34,9 +40,9 @@ public:
    
 
 private:
-    Camera s_camera;
-    hittable_list s_ObjectList;
-    Light_list s_Lights;
+    Camera s_camera;            // scene camera
+    hittable_list s_ObjectList; // all objects in scene
+    Light_list s_Lights;        // all light sources
 };
 
 #endif

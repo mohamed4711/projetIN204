@@ -1,18 +1,21 @@
+/*
+    RTMotor.cpp
+    Default renderer implementation with direct + indirect lighting
+*/
+
 #include "RTMotors/hpp/RTMotor.hpp"
 #include "lights/hpp/Light_list.hpp"
 #include <limits>
 
 const double infinity = std::numeric_limits<double>::infinity();
 
-// Implémentation du constructeur par défaut
 DefaultRenderer::DefaultRenderer() : Renderer() {}
 
-// Implémentation du constructeur de copie
 DefaultRenderer::DefaultRenderer(const DefaultRenderer& other) : Renderer(other) {}
 
-// Méthode privée pour calculer la couleur d'un rayon
+// computes color for a ray with lighting
 Vector3 DefaultRenderer::RayColor(const Ray& r, const hittable_list& world, const Light_list& lights, int depth) {
-    // Sécurité : trop de rebonds → noir
+    // too many bounces -> black
     if (depth <= 0) {
         return Vector3(0, 0, 0);
     }
@@ -21,12 +24,11 @@ Vector3 DefaultRenderer::RayColor(const Ray& r, const hittable_list& world, cons
     double t_min = 0.001;
     double t_max = infinity;
     
-    // Si le rayon ne touche rien -> couleur du ciel (dégradé bleu/blanc)
+    // no hit -> background color
     if (!world.hit(r, &t_min, &t_max, rec)) {
         return Vector3(0,0,0);
     }
 
-    // Récupérer le matériau
     if (rec.mat_ptr == nullptr) {
         return Vector3(0, 0, 0);
     }
@@ -34,20 +36,20 @@ Vector3 DefaultRenderer::RayColor(const Ray& r, const hittable_list& world, cons
     Ray scattered;
     Vector3 attenuation;
     
-    // Si le matériau disperse le rayon
+    // if material scatters the ray
     if (rec.mat_ptr->scatter(r, rec, attenuation, scattered)) {
-        // Calculer l'illumination directe (lumières)
+        // direct lighting from light sources
         Vector3 direct_illumination(0, 0, 0);
         lights.computeIllumination(rec, world, direct_illumination);
         
-        // Calculer l'illumination indirecte (réflexions/réfractions récursives)
+        // indirect lighting (recursive bounces)
         Vector3 indirect_illumination = RayColor(scattered, world, lights, depth - 1);
         
-        // Combiner : couleur directe + réflexion pondérée par le matériau
-        return direct_illumination + attenuation * indirect_illumination ; // 30 pourcent de reflexion
+        // combine direct + indirect weighted by material
+        return direct_illumination + attenuation * indirect_illumination;
     }
 
-    // Matériau absorbe tout
+    // material absorbs everything
     return Vector3(0, 0, 0);
 }
 
@@ -55,7 +57,7 @@ void DefaultRenderer::Render(const Scene& scene, Image& image) {
     int nx = image.GetXsize();
     int ny = image.GetYsize();
 
-    //charger le secne 
+    // load scene components
     const auto& camera = scene.GetCamera();
     const auto& world = scene.GetObjects();
     const auto& lights = scene.GetLights();
@@ -65,6 +67,8 @@ void DefaultRenderer::Render(const Scene& scene, Image& image) {
         if (j % 10 == 0) std::cout << "Lines remaining: " << (ny - j) << std::endl;
         for (int i = 0; i < nx; ++i) {
             Vector3 pixel_color(0, 0, 0);
+            
+            // antialiasing: average multiple samples per pixel
             for (int s = 0; s < samples_per_pixel; ++s) {
                 auto u = (i + random_double()) / (nx-1);
                 auto v = (ny-1 - j + random_double()) / (ny-1);
@@ -73,7 +77,7 @@ void DefaultRenderer::Render(const Scene& scene, Image& image) {
                 pixel_color += RayColor(r, world, lights, max_depth);
             }
             
-            // Gamma Correction & Averaging
+            // gamma correction (gamma = 2.0) and averaging
             auto r_ = sqrt(pixel_color.x / samples_per_pixel);
             auto g_ = sqrt(pixel_color.y / samples_per_pixel);
             auto b_ = sqrt(pixel_color.z / samples_per_pixel);

@@ -1,3 +1,8 @@
+/*
+    Cone.cpp
+    Ray-cone intersection with base cap
+*/
+
 #include "../hpp/Cone.hpp"
 #include <cmath>
 
@@ -7,7 +12,7 @@ bool Cone::hit(const Ray& r, double* ray_tmin, double* ray_tmax, hit_record& rec
     double cos_angle = cos(angle);
     double cos2 = cos_angle * cos_angle;
     
-    // Équation du cône infini
+    // infinite cone equation
     double dot_axis_dir = dot(axis, r.direction());
     double dot_axis_oc = dot(axis, oc);
     
@@ -21,7 +26,7 @@ bool Cone::hit(const Ray& r, double* ray_tmin, double* ray_tmax, hit_record& rec
     double sqrt_d = sqrt(discriminant);
     double t = (-b - sqrt_d) / (2.0 * a);
     
-    // Essayer les deux solutions
+    // try both solutions
     for (int i = 0; i < 2; i++) {
         if (i == 1) t = (-b + sqrt_d) / (2.0 * a);
         
@@ -30,12 +35,12 @@ bool Cone::hit(const Ray& r, double* ray_tmin, double* ray_tmax, hit_record& rec
         Point3 p = r.at(t);
         double h_check = dot(p - apex, axis);
         
-        // Vérifier si le point est dans les limites de hauteur
+        // check height bounds
         if (h_check >= 0 && h_check <= height) {
             rec.t = t;
             rec.p = p;
             
-            // Calculer la normale
+            // compute surface normal
             double r_at_h = h_check * tan(angle);
             Vector3 axis_point = apex + axis * h_check;
             Vector3 radial = (p - axis_point).normalize();
@@ -48,7 +53,7 @@ bool Cone::hit(const Ray& r, double* ray_tmin, double* ray_tmax, hit_record& rec
         }
     }
     
-    // Vérifier l'intersection avec la base
+    // check base cap intersection
     Point3 base_center = apex + axis * height;
     double denom = dot(axis, r.direction());
     

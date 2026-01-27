@@ -8,59 +8,58 @@
 class Camera{
   public :
     // =========================================================================
-    // 1. PARAMÈTRES D'ENTRÉE (Configuration de la caméra)
+    // 1. INPUT PARAMETERS (Camera configuration)
     // =========================================================================
 
-    // La position absolue de "l'oeil" de la caméra dans le monde 3D.
-    // C'est de là que partent tous les rayons primaires.
+    // Camera position in world space (the "eye")
+    // All primary rays originate from here
     Vector3 c_Position; 
 
-    // Le point précis que la caméra regarde. 
-    // Sert à calculer la direction "Avant" (Forward).
+    // The point the camera is looking at
+    // Used to compute the forward direction
     Vector3 c_LookAt; 
 
-    // Le vecteur de référence pour le "Haut" (souvent l'axe Z ou Y du monde).
-    // Il empêche la caméra de rouler sur elle-même (tête penchée).
+    // Reference "up" vector (usually world Z or Y axis)
+    // Prevents camera from rolling
     Vector3 c_Up; 
 
-    // La largeur physique de la fenêtre virtuelle (en unités/mètres).
-    // Détermine la couverture horizontale de la scène.
+    // Physical width of the virtual screen (in world units)
+    // Controls horizontal coverage of the scene
     double c_HorizSize;
 
-    // Le ratio (Largeur / Hauteur). 
-    // Sert à calculer la hauteur verticale (V) automatiquement pour empêcher 
-    // la déformation de l'image sur ton écran.
+    // Aspect ratio (width / height)
+    // Used to compute vertical size and prevent image distortion
     double c_Aspect; 
 
-    // La distance focale (Distance entre l'oeil c_Position et l'écran virtuel).
-    // Plus c'est grand = Zoom (Téléobjectif). Plus c'est petit = Grand angle.
+    // Focal length (distance from eye to virtual screen)
+    // Larger = zoom in (telephoto), smaller = wide angle
     double c_Length;  
 
 
     // =========================================================================
-    // 2. VECTEURS DU REPÈRE (Calculés automatiquement par UpdateGeometry)
-    // Ces vecteurs définissent la "vitre" virtuelle pixel par pixel.
+    // 2. LOCAL COORDINATE VECTORS (Computed by UpdateGeometry)
+    // These vectors define the virtual screen pixel by pixel
     // =========================================================================
 
-    // (Axe Z local) Vecteur de direction normalisé (longueur 1).
-    // Il pointe de c_Position vers c_LookAt. Définit la profondeur.
+    // (Local Z axis) Normalized direction vector
+    // Points from c_Position to c_LookAt, defines depth
     Vector3 c_Aligmentvector; 
 
-    // (Axe X local) Vecteur horizontal de l'écran.
-    // Calculé par produit vectoriel. Sa longueur correspond souvent à la largeur de l'écran.
-    // Sert à parcourir les pixels de gauche à droite.
+    // (Local X axis) Horizontal screen vector
+    // Computed via cross product, length matches screen width
+    // Used to traverse pixels left to right
     Vector3 c_ProjectionScreenU; 
 
-    // (Axe Y local) Vecteur vertical de l'écran.
-    // Calculé pour être perpendiculaire au regard. Sa longueur est ajustée par l'Aspect Ratio.
-    // Sert à parcourir les pixels de haut en bas.
+    // (Local Y axis) Vertical screen vector
+    // Perpendicular to view direction, scaled by aspect ratio
+    // Used to traverse pixels top to bottom
     Vector3 c_ProjectionScreenV; 
 
-    // Le point central exact de l'écran virtuel dans l'espace 3D.
-    // C'est le point d'ancrage : c_Position + (Direction * Length).
+    // Center point of the virtual screen in 3D space
+    // Anchor point: c_Position + (Direction * Length)
     Vector3 c_ScreenVectorC;
 
-  //default constuctor 
+  // default constructor 
   public:
     Camera();
 
@@ -96,11 +95,10 @@ class Camera{
     Vector3 GetScreenCenter()const ;
 
 
-    //function to generate  a ray 
+    // generates a ray for given screen coordinates
     Ray GenerateRay(float screenX, float ScrennY); 
 
-    //function to update camera geometry 
-
+    // recomputes U, V vectors and screen center
     void UpdateCameraGeometry( ); 
 
 

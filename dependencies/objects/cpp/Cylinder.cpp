@@ -1,15 +1,20 @@
+/*
+    Cylinder.cpp
+    Ray-cylinder intersection with top and bottom caps
+*/
+
 #include "../hpp/Cylinder.hpp"
 #include <cmath>
 
 bool Cylinder::hit(const Ray& r, double* ray_tmin, double* ray_tmax, hit_record& rec) const {
-    // Cylindre infini d'abord, puis on coupe par la hauteur
+    // start with infinite cylinder, then clamp by height
     Vector3 oc = r.origin() - base;
     
-    // Projections sur l'axe et le plan perpendiculaire
+    // project onto plane perpendicular to axis
     Vector3 ray_dir_perp = r.direction() - axis * dot(r.direction(), axis);
     Vector3 oc_perp = oc - axis * dot(oc, axis);
     
-    // Équation quadratique pour l'intersection avec le cylindre infini
+    // quadratic equation for infinite cylinder
     double a = dot(ray_dir_perp, ray_dir_perp);
     double b = 2.0 * dot(oc_perp, ray_dir_perp);
     double c = dot(oc_perp, oc_perp) - radius * radius;
@@ -20,7 +25,7 @@ bool Cylinder::hit(const Ray& r, double* ray_tmin, double* ray_tmax, hit_record&
     double sqrt_d = sqrt(discriminant);
     double t = (-b - sqrt_d) / (2.0 * a);
     
-    // Essayer les deux solutions
+    // try both solutions
     for (int i = 0; i < 2; i++) {
         if (i == 1) t = (-b + sqrt_d) / (2.0 * a);
         
@@ -29,12 +34,12 @@ bool Cylinder::hit(const Ray& r, double* ray_tmin, double* ray_tmax, hit_record&
         Point3 p = r.at(t);
         double h_check = dot(p - base, axis);
         
-        // Vérifier si le point est dans les limites de hauteur
+        // check height bounds
         if (h_check >= 0 && h_check <= height) {
             rec.t = t;
             rec.p = p;
             
-            // Calculer la normale (perpendiculaire à l'axe)
+            // normal perpendicular to axis
             Point3 axis_point = base + axis * h_check;
             Vector3 outward_normal = (p - axis_point).normalize();
             rec.set_face_normal(r, outward_normal);
@@ -44,10 +49,10 @@ bool Cylinder::hit(const Ray& r, double* ray_tmin, double* ray_tmax, hit_record&
         }
     }
     
-    // Vérifier les intersections avec les capuchons (bases circulaires)
-    // Base inférieure
+    // check cap intersections
     double denom = dot(axis, r.direction());
     if (std::abs(denom) > 1e-6) {
+        // bottom cap
         double t_base = dot(base - r.origin(), axis) / denom;
         if (t_base >= *ray_tmin && t_base <= *ray_tmax) {
             Point3 p = r.at(t_base);
@@ -61,7 +66,7 @@ bool Cylinder::hit(const Ray& r, double* ray_tmin, double* ray_tmax, hit_record&
             }
         }
         
-        // Base supérieure
+        // top cap
         Point3 top = base + axis * height;
         double t_top = dot(top - r.origin(), axis) / denom;
         if (t_top >= *ray_tmin && t_top <= *ray_tmax) {

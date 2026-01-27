@@ -1,3 +1,8 @@
+/*
+    Plan.hpp
+    Infinite plane defined by a point and normal vector
+*/
+
 #ifndef PLAN_HPP
 #define PLAN_HPP
 
@@ -6,8 +11,8 @@
 
 class Plan : public hittable {
 public:
-    Point3 point;   
-    Vector3 normal; 
+    Point3 point;    // any point on the plane
+    Vector3 normal;  // plane normal (perpendicular to surface)
     std::shared_ptr<Material> mat_ptr;
 
     Plan(Point3 p, Vector3 n, std::shared_ptr<Material> m) 

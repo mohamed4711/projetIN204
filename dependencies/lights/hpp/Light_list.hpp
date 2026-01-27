@@ -1,3 +1,9 @@
+/*
+    Light_list.hpp
+    Container for multiple light sources
+    Accumulates contributions from all lights
+*/
+
 #ifndef LIGHT_LIST_HPP
 #define LIGHT_LIST_HPP
 
@@ -23,13 +29,14 @@ class Light_list : public Light {
         Lights_list.push_back(light);
     }
 
+    // iterates over all lights and sums their contributions
     bool computeIllumination(hit_record &hitPoint, const hittable_list &Objects, Vector3 &outColor) const override {
         Vector3 tempColor(0, 0, 0);
-        outColor = Vector3(0, 0, 0); // Reset de la couleur de sortie
+        outColor = Vector3(0, 0, 0); // reset output color
         bool isAnyLightHitting = false;
 
         for (const auto& light : Lights_list) {
-            // On cumule l'intensité de chaque lampe
+            // accumulate intensity from each light
             if (light->computeIllumination(hitPoint, Objects, tempColor)) {
                 outColor += tempColor; 
                 isAnyLightHitting = true;

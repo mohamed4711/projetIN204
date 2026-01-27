@@ -1,21 +1,26 @@
+/*
+    _Camera.cpp
+    Camera class implementation for ray tracing
+    Handles position, orientation and ray generation
+*/
+
 #include "camera/hpp/_Camera.hpp"
 
 
-// Default Constructor
+// Default constructor - sets up camera with basic values
 Camera::Camera() {
-    c_Position  = Vector3(0.0, -10.0, 0.0);
-    c_LookAt    = Vector3(0.0, 0.0, 0.0);
-    c_Up        = Vector3(0.0, 0.0, 1.0);
+    c_Position  = Vector3(0.0, -10.0, 0.0);  // camera placed back on Y axis
+    c_LookAt    = Vector3(0.0, 0.0, 0.0);    // looking at origin
+    c_Up        = Vector3(0.0, 0.0, 1.0);    // Z is up
     c_Length    = 1.0;
     c_Aspect    = 1.0;
     c_HorizSize = 1.0;
 
-    // Initialize the derived vectors immediately
     UpdateCameraGeometry();
 }
 
 // =============================================================================
-// Setters (Must update geometry after every change)
+// Setters - each modification triggers screen geometry recalculation
 // =============================================================================
 
 void Camera::SetPosition(const Vector3& position) {
@@ -63,40 +68,40 @@ Vector3 Camera::GetV() const            { return c_ProjectionScreenV; }
 Vector3 Camera::GetScreenCenter() const { return c_ScreenVectorC; }
 
 // =============================================================================
-// Core Functionality
+// Core functions
 // =============================================================================
 
-// Compute the derived vectors for the camera (Screen Center, U, V)
+// Updates U, V vectors and virtual screen center
+// Builds the camera's local coordinate system
 void Camera::UpdateCameraGeometry() {
-    // 1. Compute the forward alignment vector (from Camera to LookAt)
+    // direction vector: from camera to target point
     c_Aligmentvector = (c_LookAt - c_Position).normalize();
 
-    // 2. Compute the U vector (Right) using Cross Product
+    // U = horizontal vector (right) via cross product
     c_ProjectionScreenU = c_Aligmentvector.cross(c_Up).normalize();
 
-    // 3. Compute the V vector (Screen Up) perpendicular to both Alignment and U
+    // V = screen vertical vector, perpendicular to U and direction
     c_ProjectionScreenV = c_ProjectionScreenU.cross(c_Aligmentvector).normalize();
 
-    // 4. Compute the center of the virtual screen
+    // virtual screen center = position + direction * focal distance
     c_ScreenVectorC = c_Position + (c_Aligmentvector * c_Length);
 
-    // 5. Scale U and V to match the physical screen size and aspect ratio
-    // Note: We use the full size here, assuming screen coordinates are centered (e.g., -0.5 to 0.5)
+    // scale U and V according to screen size
     c_ProjectionScreenU = c_ProjectionScreenU * c_HorizSize;
     
     double screenHeight = c_HorizSize / c_Aspect;
     c_ProjectionScreenV = c_ProjectionScreenV * screenHeight;
 }
 
-// Generate a Ray from the camera through a specific screen position (u, v)
+// Generates a ray through pixel (screenX, screenY)
+// screenX and screenY are normalized coordinates [-0.5, 0.5]
 Ray Camera::GenerateRay(float screenX, float screenY) {
-    // Calculate the 3D point on the virtual screen
-    // screenX and screenY should be normalized coordinates relative to the center
+    // point on virtual screen corresponding to this pixel
     Vector3 screenPoint = c_ScreenVectorC + 
                           (c_ProjectionScreenU * screenX) + 
                           (c_ProjectionScreenV * screenY);
 
-    // Calculate the direction vector from the camera origin to the screen point
+    // ray direction: from camera towards this point
     Vector3 direction = (screenPoint - c_Position).normalize();
 
     return Ray(c_Position, direction);

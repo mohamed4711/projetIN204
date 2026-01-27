@@ -1,4 +1,9 @@
-// dependencies/objects/hpp/Sphere.hpp
+/*
+    Sphere.hpp
+    Sphere primitive defined by center and radius
+    Uses quadratic equation for ray intersection
+*/
+
 #ifndef SPHERE_HPP
 #define SPHERE_HPP
 
@@ -11,12 +16,11 @@
 class sphere : public hittable {
   public:
     sphere() {}
-    // Ensure this 3-argument constructor is saved and visible to the compiler
     sphere(const Point3& center, double radius, std::shared_ptr<Material> m) 
         : center(center), radius(std::fmax(0,radius)), mat_ptr(m) {}
 
     bool hit(const Ray& r, double *ray_tmin, double *ray_tmax, hit_record& rec) const override {
-        // ... (your existing hit logic)
+        // solve quadratic: |P(t) - C|^2 = r^2
         Vector3 oc = center - r.origin();
         auto a = r.direction().lengthSquared();
         auto h = dot(r.direction(), oc);
@@ -26,7 +30,7 @@ class sphere : public hittable {
         if (discriminant < 0) return false;
         auto sqrtd = std::sqrt(discriminant);
 
-        // Find nearest root in acceptable range
+        // find nearest root in valid range
         auto root = (h - sqrtd) / a;
         if (root <= *ray_tmin || *ray_tmax <= root) {
             root = (h + sqrtd) / a;
@@ -36,7 +40,8 @@ class sphere : public hittable {
 
         rec.t = root;
         rec.p = r.at(rec.t);
-        rec.mat_ptr = mat_ptr; // Ensure material is assigned
+        rec.mat_ptr = mat_ptr;
+        // normal points outward from center
         Vector3 outward_normal = (rec.p - center) / radius;
         rec.set_face_normal(r, outward_normal);
         return true;
@@ -45,6 +50,6 @@ class sphere : public hittable {
   public:
     Point3 center;
     double radius;
-    std::shared_ptr<Material> mat_ptr; // Ensure this member exists
+    std::shared_ptr<Material> mat_ptr;
 };
 #endif
