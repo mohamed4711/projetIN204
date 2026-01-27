@@ -10,11 +10,14 @@
 #include "../../objects/hpp/Cylinder.hpp"
 #include "../../objects/hpp/Cone.hpp"
 #include "../../objects/hpp/Triangle.hpp"
+#include "../../objects/hpp/Parallepiped.hpp"
 #include "../../materials/hpp/Lambertian.hpp"
 #include "../../materials/hpp/Metal.hpp"
 #include "../../materials/hpp/Dielectric.hpp"
 #include "../../objects/hpp/Plan.hpp"
 #include "../../lights/hpp/PointLight.hpp"
+#include "../../lights/hpp/DirectionalLight.hpp"
+#include "../../lights/hpp/SpotLight.hpp"
 
 #include <iostream>
 #include <fstream>
@@ -41,6 +44,7 @@ void SceneLoader::LoadJSON(const std::string& filename, Scene& scene) {
             else if (type == "cylinder") ParseCylinderJSON(item, scene);
             else if (type == "cone") ParseConeJSON(item, scene);
             else if (type == "triangle") ParseTriangleJSON(item, scene);
+            else if (type == "parallepiped" || type == "box") ParseParallelepipedJSON(item, scene);
         }
 
         // parse lights if present
@@ -48,6 +52,8 @@ void SceneLoader::LoadJSON(const std::string& filename, Scene& scene) {
             for (const auto& item : data["lights"]) {
                 std::string type = item["type"];
                 if (type == "point") ParsePointLightJSON(item, scene);
+                else if (type == "directional" || type == "sun") ParseDirectionalLightJSON(item, scene);
+                else if (type == "spot" || type == "spotlight") ParseSpotLightJSON(item, scene);
             }
         }
         std::cout << "JSON scene loaded!" << std::endl;
@@ -92,6 +98,23 @@ void SceneLoader::ParsePointLightJSON(const json& j, Scene& scene) {
     auto intensity = LoadVec3(j["intensity"]);
     
     scene.AddLight(std::make_shared<PointLight>(pos, intensity));
+}
+
+void SceneLoader::ParseDirectionalLightJSON(const json& j, Scene& scene) {
+    auto dir = LoadVec3(j["direction"]);
+    auto intensity = LoadVec3(j["intensity"]);
+    
+    scene.AddLight(std::make_shared<DirectionalLight>(dir, intensity));
+}
+
+void SceneLoader::ParseSpotLightJSON(const json& j, Scene& scene) {
+    auto pos = LoadVec3(j["position"]);
+    auto dir = LoadVec3(j["direction"]);
+    auto intensity = LoadVec3(j["intensity"]);
+    double inner_angle = j.value("inner_angle", 20.0);  // default 20 degrees
+    double outer_angle = j.value("outer_angle", 30.0);  // default 30 degrees
+    
+    scene.AddLight(std::make_shared<SpotLight>(pos, dir, intensity, inner_angle, outer_angle));
 }
 
 void SceneLoader::ParseCylinderJSON(const json& j, Scene& scene) {
@@ -140,4 +163,18 @@ void SceneLoader::ParseTriangleJSON(const json& j, Scene& scene) {
     else m = std::make_shared<Dielectric>(1.5);
 
     scene.AddObject(std::make_shared<Triangle>(v0, v1, v2, m));
+}
+
+void SceneLoader::ParseParallelepipedJSON(const json& j, Scene& scene) {
+    auto p_min = LoadVec3(j["p_min"]);
+    auto p_max = LoadVec3(j["p_max"]);
+    auto col = LoadVec3(j["color"]);
+    int mat = j["material_type"];
+
+    std::shared_ptr<Material> m;
+    if (mat == 0) m = std::make_shared<Lambertian>(col);
+    else if (mat == 1) m = std::make_shared<Metal>(col, 0.1);
+    else m = std::make_shared<Dielectric>(1.5);
+
+    scene.AddObject(std::make_shared<Parallepiped>(p_min, p_max, m));
 }

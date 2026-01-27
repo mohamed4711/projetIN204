@@ -27,7 +27,10 @@ private:
     static void ParseCylinderJSON(const json& j, Scene& scene);
     static void ParseConeJSON(const json& j, Scene& scene);
     static void ParseTriangleJSON(const json& j, Scene& scene);
+    static void ParseParallelepipedJSON(const json& j, Scene& scene);
     static void ParsePointLightJSON(const json& j, Scene& scene);
+    static void ParseDirectionalLightJSON(const json& j, Scene& scene);
+    static void ParseSpotLightJSON(const json& j, Scene& scene);
 };
 
 #endif

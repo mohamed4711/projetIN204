@@ -42,6 +42,7 @@ make
 ## To-Do List
 
 Gérer les textures (Texture Mapping / UV)
-Implémenter la sauvegarde d'image en PNG et JPG
-Ajouter des sources de lumière complexes (Spotlight, Directionnelle)
 Rédiger l'analyse fonctionnelle et architecturale
+
+si on'a le temps (Implémenter la sauvegarde d'image en PNG et JPG)
+
