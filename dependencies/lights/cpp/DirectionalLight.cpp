@@ -33,12 +33,7 @@ bool DirectionalLight::computeIllumination(hit_record &rec, const hittable_list 
     // get material color
     Vector3 material_color(1.0, 1.0, 1.0);
     if (rec.mat_ptr != nullptr) {
-        Ray dummy_ray;
-        Vector3 attenuation;
-        Ray scattered;
-        if (rec.mat_ptr->scatter(dummy_ray, rec, attenuation, scattered)) {
-            material_color = attenuation;
-        }
+        material_color = rec.mat_ptr->baseColor();
     }
     
     outColor = material_color * intensity * cos_theta;

@@ -43,8 +43,8 @@ Vector3 SimpleRenderer::RayColor(const Ray& r, const hittable_list& world, const
         // Indirect lighting (recursive bounces)
         Vector3 indirect_illumination = RayColor(scattered, world, lights, depth - 1);
         
-        // Combine direct + indirect weighted by material color
-        return direct_illumination + attenuation * indirect_illumination;
+        // Combine: direct light * material color + indirect bounces * material color
+        return attenuation * (direct_illumination + indirect_illumination);
     }
 
     // Material absorbs all light

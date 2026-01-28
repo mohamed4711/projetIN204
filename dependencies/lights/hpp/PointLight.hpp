@@ -33,12 +33,7 @@ public:
         // get material albedo color
         Vector3 material_color(1.0, 1.0, 1.0); // default white
         if (rec.mat_ptr != nullptr) {
-            Ray dummy_ray;
-            Vector3 attenuation;
-            Ray scattered;
-            if (rec.mat_ptr->scatter(dummy_ray, rec, attenuation, scattered)) {
-                material_color = attenuation;
-            }
+            material_color = rec.mat_ptr->baseColor();
         }
         
         // final color = material * light intensity * cosine factor

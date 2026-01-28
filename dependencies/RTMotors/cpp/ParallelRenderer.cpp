@@ -5,10 +5,9 @@
 */
 
 #include "../hpp/ParallelRenderer.hpp"
-#include "lights/hpp/Light_list.hpp"
-#include <omp.h>
 #include <limits>
-
+#include <atomic>
+#include <omp.h>
 
 
 ParallelRenderer::ParallelRenderer() : Renderer() {}
@@ -47,8 +46,8 @@ Vector3 ParallelRenderer::RayColor(const Ray& r, const hittable_list& world, con
         // Indirect lighting (recursive bounces)
         Vector3 indirect_illumination = RayColor(scattered, world, lights, depth - 1);
         
-        // Combine direct + indirect
-        return direct_illumination + attenuation * indirect_illumination;
+        // Combine: direct light * material color + indirect bounces * material color
+        return attenuation * (direct_illumination + indirect_illumination);
     }
 
     return Vector3(0, 0, 0);
@@ -65,6 +64,8 @@ void ParallelRenderer::Render(const Scene& scene, Image& image) {
     int num_threads = omp_get_max_threads();
     std::cout << "ParallelRenderer: Starting render (" << nx << "x" << ny << ")..." << std::endl;
     std::cout << "  Threads: " << num_threads << ", Samples: " << samples_per_pixel << ", Max depth: " << max_depth << std::endl;
+
+    std::atomic<int> rows_done(0);
 
     // Parallelize outer loop with dynamic scheduling for load balancing
     #pragma omp parallel for schedule(dynamic, 10)
@@ -87,6 +88,15 @@ void ParallelRenderer::Render(const Scene& scene, Image& image) {
             auto b_ = sqrt(pixel_color.z / samples_per_pixel);
 
             image.SetPixel(i, j, r_ * 255.99, g_ * 255.99, b_ * 255.99);
+        }
+
+        int done = ++rows_done;
+        if (done % 10 == 0 || done == ny) {
+            int percent = done * 100 / ny;
+            #pragma omp critical
+            {
+                std::cout << "  Progress: " << percent << "% (line " << done << "/" << ny << ")" << std::endl;
+            }
         }
     }
     std::cout << "ParallelRenderer: Done." << std::endl;

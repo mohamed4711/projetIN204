@@ -16,6 +16,7 @@ public:
     
     Metal(const Vector3& a, double f);
     
+    Vector3 baseColor() const override { return albedo; }
     bool scatter(const Ray& r_in, const hit_record& rec, Vector3& attenuation, Ray& scattered) const override;
 };
 

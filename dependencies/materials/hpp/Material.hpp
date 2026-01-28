@@ -19,6 +19,8 @@
 class Material {
 public:
     virtual ~Material() = default;
+    // base (albedo/tint) color used for direct lighting
+    virtual Vector3 baseColor() const = 0;
     // computes scattered ray and attenuation, returns false if ray is absorbed
     virtual bool scatter(const Ray& r_in, const hit_record& rec, Vector3& attenuation, Ray& scattered) const = 0;
 };

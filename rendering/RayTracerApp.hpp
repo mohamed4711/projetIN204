@@ -1,4 +1,3 @@
-
 /*
     RayTracerApp.hpp
     Main application class using SDL2 and ImGui
