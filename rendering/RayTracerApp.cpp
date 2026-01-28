@@ -289,8 +289,8 @@ void RayTracerApp::OnRender() {
     ImGui::Separator();
     
     ImGui::TextColored(ImVec4(0.8f, 0.8f, 0.8f, 1.0f), "Params");
-    ImGui::SliderInt("Nb Sample", &m_samples, 1, 100);
-    ImGui::SliderInt("Nb Bounce", &m_depth, 1, 25);
+    ImGui::SliderInt("Nb Sample", &m_samples, 1, 500);
+    ImGui::SliderInt("Nb Bounce", &m_depth, 1, 50);
     
     ImGui::Separator();
     

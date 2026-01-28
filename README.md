@@ -1,6 +1,6 @@
 # Ray Tracer (RT) - IN204
 
-Un moteur de rendu par lancer de rayons (Ray Tracing) développé en C++ moderne, basé sur la série *Ray Tracing in One Weekend* et sur le modèle d'un ainé académique. Ce projet utilise SDL2 et ImGui pour l'affichage et l'interface en temps réel du rendu.
+Un moteur de rendu par lancer de rayons (Ray Tracing) développé en C++ moderne, basé sur la série *Ray Tracing in One Weekend* et sur le modèle d'un ainé académique. Ce projet utilise SDL2 et ImGui pour l'affichage et l'interface en temps réel du rendu. 
 
 ---
 
@@ -38,6 +38,163 @@ Ce projet a pour objectif de mettre en place un moteur de ray tracing capable de
    - Interface ImGui pour configurer la scène
    - Sauvegarde de rendus en format PPM
    - Contrôle des paramètres en temps réel
+
+---
+
+## Principes de Ray Tracing
+
+### Ray Tracing Basique
+
+Le **ray tracing** (lancer de rayons) est une technique de rendu qui simule le comportement de la lumière pour générer des images photoréalistes. 
+
+**Principe fondamental :**
+Pour chaque pixel de l'image, on lance un rayon depuis la caméra à travers ce pixel dans la scène. Pour chaque rayon :
+
+1. **Détection d'intersection** : On trouve l'objet le plus proche que le rayon frappe
+2. **Calcul d'illumination** : On calcule la contribution de la lumière à ce point (couleur, ombre, réflexion)
+3. **Récursion** : Si le matériau est réfléchissant ou transparent, on lance des rayons secondaires
+4. **Accumulation** : On accumule les contributions jusqu'à une profondeur maximale
+
+**Équation de base :**
+$$C_{pixel} = \int_{hemisphere} L(direction) \cdot BRDF \cdot \cos(\theta) \, d\omega$$
+
+Où :
+- $L(direction)$ = luminosité en provenance de cette direction
+- $BRDF$ = fonction de réflectance du matériau
+- $\cos(\theta)$ = angle d'incidence
+
+**Exemple de processus :**
+```
+Pixel (x, y) 
+  └─> Rayon primaire (camera -> pixel)
+      ├─> Intersection avec objet
+      ├─> Calcul ombrage direct (lights)
+      ├─> Si réfléchissant : Rayon de réflexion
+      │   └─> Récursion...
+      └─> Si transparent : Rayon de transmission
+          └─> Récursion...
+```
+
+![Ray Tracing Flow Chart](image.png)
+
+### Accélération avec BVH (Bounding Volume Hierarchy)
+
+Le problème majeur du ray tracing basique : pour **chaque rayon**, on doit tester l'intersection avec **tous les objets** de la scène. Avec $n$ rayons et $m$ objets, c'est $O(n \times m)$ opérations !
+
+Pour une image 500×500 = 250 000 pixels, avec 100 samples par pixel = 25 millions de rayons. Avec 10 000 objets, cela représente **250 milliards** d'intersections à calculer. **Sans optimisation, c'est impossible.**
+
+**Solution : BVH (Hiérarchie de Volumes Englobants)**
+
+La BVH organise les objets dans une **structure arborescente hiérarchique** où chaque nœud contient une boîte englobante (AABB : Axis-Aligned Bounding Box).
+
+**Principe :**
+1. **Pré-traitement** : On construit récursivement un arbre binaire
+   - Trier les objets selon un axe (X, Y ou Z) choisi aléatoirement
+   - Diviser la liste en deux moitiés
+   - Créer récursivement les sous-arbres gauche et droit
+   - Calculer la boîte englobante (AABB) qui englobe les enfants
+2. **Traversée hiérarchique** : Pour chaque rayon, on teste d'abord si le rayon intersecte la boîte englobante
+3. **Élagage rapide** : Si le rayon ne frappe pas la boîte, on ignore tous les objets à l'intérieur (élagage entier du sous-arbre)
+
+**Structure BVH :**
+```
+                   AABB (root - toute la scène)
+                  /                    \
+         AABB (gauche)          AABB (droite)
+        /          \              /          \
+    AABB      AABB         AABB         AABB
+    / \        / \           / \         / \
+   O1 O2      O3 O4        O5 O6       O7 O8
+```
+
+**Comparaison de performance :**
+
+| Méthode | Complexité | Rayons | Objets | Opérations |
+|---------|-----------|--------|--------|------------|
+| Sans BVH (hittable_list) | $O(n \times m)$ | 25M | 10k | 250B ❌ |
+| Avec BVH | $O(n \times \log m)$ | 25M | 10k | 130M ✅ |
+
+**Gain : ~1000× plus rapide !**
+
+#### Implémentation dans le Projet
+
+**Structure AABB (Axis-Aligned Bounding Box) :**
+- Stocke 3 intervalles (x, y, z) pour les bornes min/max
+- Méthode `hit()` utilise l'algorithme du "slab" pour tester l'intersection rayon-AABB
+- Les comparateurs trient les objets selon les axes (SAH - Split Along Heuristic)
+
+**Construction BVH :**
+```cpp
+// Constructeur récursif
+bvh_node(const std::vector<std::shared_ptr<hittable>>& src_objects, size_t start, size_t end) {
+    // Choix aléatoire d'axe de division
+    int axis = random_int(0, 2);  // X, Y ou Z
+    
+    // Tri des objets selon leur AABB sur cet axe
+    std::sort(objects.begin() + start, objects.begin() + end, comparator);
+    
+    // Division en deux moitiés
+    auto mid = start + object_span / 2;
+    left = std::make_shared<bvh_node>(objects, start, mid);    // Sous-arbre gauche
+    right = std::make_shared<bvh_node>(objects, mid, end);     // Sous-arbre droit
+    
+    // Boîte englobante : union des deux enfants
+    bbox = aabb(left->bounding_box(), right->bounding_box());
+}
+```
+
+**Traversée BVH :**
+```cpp
+bool hit(const Ray& r, double* ray_tmin, double* ray_tmax, hit_record& rec) const override {
+    // 1. Tester si le rayon intersecte la boîte englobante
+    if (!bbox.hit(r, interval(*ray_tmin, *ray_tmax)))
+        return false;  // Élagage : ignorer tout le sous-arbre
+    
+    // 2. Tester les enfants
+    bool hit_left = left->hit(r, ray_tmin, ray_tmax, rec);
+    
+    // 3. Optimisation : si on a frappé à gauche, limiter la recherche à droite
+    //    (pas besoin de tester des objets plus loin que l'intersection gauche)
+    double new_tmax = hit_left ? rec.t : *ray_tmax;
+    bool hit_right = right->hit(r, ray_tmin, &new_tmax, rec);
+    
+    return hit_left || hit_right;
+}
+```
+
+**Utilisation :**
+```cpp
+// Dans Scene, on peut wrapper la liste d'objets avec BVH
+hittable_list world;
+// ... ajouter des objets ...
+auto accelerated_world = std::make_shared<bvh_node>(world);
+
+// La BVH remplace la traversée linéaire
+world.hit(ray, ...)  // O(m) - teste tous les objets
+accelerated_world->hit(ray, ...)  // O(log m) - élagage hiérarchique
+```
+
+#### Exemple Visual - Images de Rendu
+
+**Rendu simple (100 samples, 10 bounces) :**
+![Rendu 100 samples](100-10.png)
+
+**Rendu haute qualité (500 samples, 25 bounces) :**
+![Rendu 500 samples](500-25.png)
+
+**Structure BVH Visualisée :**
+![Structure BVH](BVH.png)
+
+**Avantages de la BVH :**
+-  Construction rapide $O(n \log n)$ par tri et division récursive
+- Accès cache-efficace (arbre binaire)
+- Simple à implémenter et paralléliser avec OpenMP
+- Élagage très efficace dans les cas réalistes (majorité des rayons)
+- Méthode du "slab" très rapide pour tester AABB
+
+**Implémentation dans le projet :**
+- [dependencies/objects/_bvh_node.hpp](dependencies/objects/_bvh_node.hpp) - Construction et traversée BVH
+- [dependencies/objects/_AABB.hpp](dependencies/objects/_AABB.hpp) - Boîte englobante et test d'intersection
 
 ---
 
