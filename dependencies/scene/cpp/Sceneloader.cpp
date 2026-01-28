@@ -14,6 +14,7 @@
 #include "materials/hpp/Lambertian.hpp"
 #include "materials/hpp/Metal.hpp"
 #include "materials/hpp/Dielectric.hpp"
+#include "materials/hpp/Texture.hpp"
 #include "objects/hpp/Plan.hpp"
 #include "lights/hpp/PointLight.hpp"
 #include "lights/hpp/DirectionalLight.hpp"
@@ -121,16 +122,62 @@ void SceneLoader::LoadJSONBVH(const std::string& filename, Scene& scene, double 
 // helper to parse Vector3 from JSON array
 Vector3 LoadVec3(const json& j) { return Vector3(j[0], j[1], j[2]); }
 
+std::shared_ptr<Texture> CreateTextureFromJSON(const json& j) {
+    if (!j.contains("texture")) {
+        return nullptr;
+    }
+
+    const auto& tex = j["texture"];
+    std::string type = tex.value("type", "solid");
+
+    if (type == "checker") {
+        Vector3 c1 = tex.contains("color1") ? LoadVec3(tex["color1"]) : Vector3(0.2, 0.3, 0.1);
+        Vector3 c2 = tex.contains("color2") ? LoadVec3(tex["color2"]) : Vector3(0.9, 0.9, 0.9);
+        double scale = tex.value("scale", 5.0);
+        return std::make_shared<CheckerTexture>(
+            std::make_shared<SolidColor>(c1),
+            std::make_shared<SolidColor>(c2),
+            scale);
+    }
+
+    if (type == "stripes") {
+        Vector3 c1 = tex.contains("color1") ? LoadVec3(tex["color1"]) : Vector3(0.1, 0.2, 0.8);
+        Vector3 c2 = tex.contains("color2") ? LoadVec3(tex["color2"]) : Vector3(0.9, 0.9, 0.9);
+        Vector3 axis = tex.contains("axis") ? LoadVec3(tex["axis"]) : Vector3(1, 0, 0);
+        double scale = tex.value("scale", 8.0);
+        return std::make_shared<StripeTexture>(
+            std::make_shared<SolidColor>(c1),
+            std::make_shared<SolidColor>(c2),
+            axis,
+            scale);
+    }
+
+    return nullptr;
+}
+
+std::shared_ptr<Material> CreateMaterialFromJSON(const json& j) {
+    int mat = j.value("material_type", 0);  // 0=lambertian, 1=metal, 2=dielectric
+    Vector3 col = j.contains("color") ? LoadVec3(j["color"]) : Vector3(0.8, 0.8, 0.8);
+
+    if (mat == 0) {
+        auto tex = CreateTextureFromJSON(j);
+        if (tex) {
+            return std::make_shared<Lambertian>(tex);
+        }
+        return std::make_shared<Lambertian>(col);
+    }
+
+    if (mat == 1) {
+        return std::make_shared<Metal>(col, 0.1);
+    }
+
+    return std::make_shared<Dielectric>(1.5);
+}
+
 void SceneLoader::ParseSphereJSON(const json& j, Scene& scene) {
     auto center = LoadVec3(j["center"]);
     double r = j["radius"];
-    auto col = LoadVec3(j["color"]);
-    int mat = j["material_type"];  // 0=lambertian, 1=metal, 2=dielectric
-
-    std::shared_ptr<Material> m;
-    if (mat == 0) m = std::make_shared<Lambertian>(col);
-    else if (mat == 1) m = std::make_shared<Metal>(col, 0.1);
-    else m = std::make_shared<Dielectric>(1.5);
+    std::shared_ptr<Material> m = CreateMaterialFromJSON(j);
 
     scene.AddObject(std::make_shared<sphere>(center, r, m));
 }
@@ -138,13 +185,7 @@ void SceneLoader::ParseSphereJSON(const json& j, Scene& scene) {
 void SceneLoader::ParsePlaneJSON(const json& j, Scene& scene) {
     auto pt = LoadVec3(j["point"]);
     auto norm = LoadVec3(j["normal"]);
-    auto col = LoadVec3(j["color"]);
-    int mat = j["material_type"];
-
-    std::shared_ptr<Material> m;
-    if (mat == 0) m = std::make_shared<Lambertian>(col);
-    else if (mat == 1) m = std::make_shared<Metal>(col, 0.1);
-    else m = std::make_shared<Dielectric>(1.5);
+    std::shared_ptr<Material> m = CreateMaterialFromJSON(j);
 
     scene.AddObject(std::make_shared<Plan>(pt, norm, m));
 }
@@ -178,13 +219,7 @@ void SceneLoader::ParseCylinderJSON(const json& j, Scene& scene) {
     auto axis = LoadVec3(j["axis"]);
     double radius = j["radius"];
     double height = j["height"];
-    auto col = LoadVec3(j["color"]);
-    int mat = j["material_type"];
-
-    std::shared_ptr<Material> m;
-    if (mat == 0) m = std::make_shared<Lambertian>(col);
-    else if (mat == 1) m = std::make_shared<Metal>(col, 0.1);
-    else m = std::make_shared<Dielectric>(1.5);
+    std::shared_ptr<Material> m = CreateMaterialFromJSON(j);
 
     scene.AddObject(std::make_shared<Cylinder>(base, axis, radius, height, m));
 }
@@ -195,13 +230,7 @@ void SceneLoader::ParseConeJSON(const json& j, Scene& scene) {
     double angle_deg = j["angle"];
     double angle = angle_deg * M_PI / 180.0;  // convert degrees to radians
     double height = j["height"];
-    auto col = LoadVec3(j["color"]);
-    int mat = j["material_type"];
-
-    std::shared_ptr<Material> m;
-    if (mat == 0) m = std::make_shared<Lambertian>(col);
-    else if (mat == 1) m = std::make_shared<Metal>(col, 0.1);
-    else m = std::make_shared<Dielectric>(1.5);
+    std::shared_ptr<Material> m = CreateMaterialFromJSON(j);
 
     scene.AddObject(std::make_shared<Cone>(apex, axis, angle, height, m));
 }
@@ -210,13 +239,7 @@ void SceneLoader::ParseTriangleJSON(const json& j, Scene& scene) {
     auto v0 = LoadVec3(j["v0"]);
     auto v1 = LoadVec3(j["v1"]);
     auto v2 = LoadVec3(j["v2"]);
-    auto col = LoadVec3(j["color"]);
-    int mat = j["material_type"];
-
-    std::shared_ptr<Material> m;
-    if (mat == 0) m = std::make_shared<Lambertian>(col);
-    else if (mat == 1) m = std::make_shared<Metal>(col, 0.1);
-    else m = std::make_shared<Dielectric>(1.5);
+    std::shared_ptr<Material> m = CreateMaterialFromJSON(j);
 
     scene.AddObject(std::make_shared<Triangle>(v0, v1, v2, m));
 }
@@ -224,13 +247,7 @@ void SceneLoader::ParseTriangleJSON(const json& j, Scene& scene) {
 void SceneLoader::ParseParallelepipedJSON(const json& j, Scene& scene) {
     auto p_min = LoadVec3(j["p_min"]);
     auto p_max = LoadVec3(j["p_max"]);
-    auto col = LoadVec3(j["color"]);
-    int mat = j["material_type"];
-
-    std::shared_ptr<Material> m;
-    if (mat == 0) m = std::make_shared<Lambertian>(col);
-    else if (mat == 1) m = std::make_shared<Metal>(col, 0.1);
-    else m = std::make_shared<Dielectric>(1.5);
+    std::shared_ptr<Material> m = CreateMaterialFromJSON(j);
 
     scene.AddObject(std::make_shared<Parallepiped>(p_min, p_max, m));
 }

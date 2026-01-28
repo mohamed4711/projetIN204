@@ -1,0 +1,125 @@
+{
+  "camera": {
+    "position": [13, 2, 3],
+    "lookat": [0, 0, 0],
+    "up": [0, -1, 0],
+    "fov": 20,
+    "aperture": 0.05,
+    "focus_distance": 10.0
+  },
+  "objects": [
+    {
+      "type": "plane",
+      "point": [0, -0.5, 0],
+      "normal": [0, 1, 0],
+      "color": [0.4, 0.5, 0.4],
+      "material_type": 0,
+      "texture": {
+        "type": "checker",
+        "color1": [0.2, 0.3, 0.1],
+        "color2": [0.9, 0.9, 0.9],
+        "scale": 4.0
+      }
+    },
+    {
+      "type": "sphere",
+      "center": [0, 1, 0],
+      "radius": 1.0,
+      "color": [0.5, 0.5, 1.0],
+      "material_type": 2
+    },
+    {
+      "type": "sphere",
+      "center": [-4, 1, 0],
+      "radius": 1.0,
+      "color": [0.4, 0.2, 0.1],
+      "material_type": 0
+    },
+    {
+      "type": "sphere",
+      "center": [4, 1, 0],
+      "radius": 1.0,
+      "color": [0.7, 0.6, 0.5],
+      "material_type": 1
+    },
+    {
+      "type": "cylinder",
+      "base": [-7, -0.5, -3],
+      "axis": [0, 1, 0],
+      "radius": 0.5,
+      "height": 2.0,
+      "color": [0.8, 0.2, 0.2],
+      "material_type": 0
+    },
+    {
+      "type": "cylinder",
+      "base": [7, -0.5, -3],
+      "axis": [0, 1, 0],
+      "radius": 0.6,
+      "height": 1.5,
+      "color": [0.2, 0.8, 0.2],
+      "material_type": 1
+    },
+    {
+      "type": "cone",
+      "apex": [0, 2, 5],
+      "axis": [0, -1, 0],
+      "angle": 30,
+      "height": 2.0,
+      "color": [1.0, 0.8, 0.0],
+      "material_type": 0
+    },
+    {
+      "type": "sphere",
+      "center": [-6, 0.3, 2],
+      "radius": 0.3,
+      "color": [1.0, 0.5, 0.0],
+      "material_type": 1
+    },
+    {
+      "type": "sphere",
+      "center": [6, 0.5, -2],
+      "radius": 0.5,
+      "color": [0.9, 0.9, 0.9],
+      "material_type": 1
+    },
+    {
+      "type": "box",
+      "p_min": [-2, -0.5, -5],
+      "p_max": [2, 1.5, -3],
+      "color": [0.8, 0.3, 0.8],
+      "material_type": 0,
+      "texture": {
+        "type": "stripes",
+        "color1": [0.8, 0.3, 0.8],
+        "color2": [0.2, 0.2, 0.2],
+        "axis": [0, 1, 0],
+        "scale": 10.0
+      }
+    },
+    {
+      "type": "sphere",
+      "center": [0, 3, 0],
+      "radius": 2.0,
+      "color": [0.9, 0.9, 0.95],
+      "material_type": 2
+    }
+  ],
+  "lights": [
+    {
+      "type": "point",
+      "position": [5, 5, 5],
+      "intensity": [1.0, 1.0, 0.9]
+    },
+    {
+      "type": "point",
+      "position": [-5, 4, 3],
+      "intensity": [0.7, 0.7, 1.0]
+    },
+    {
+      "type": "directional",
+      "direction": [1, 2, 1],
+      "intensity": [0.5, 0.5, 0.6]
+    }
+  ]
+}

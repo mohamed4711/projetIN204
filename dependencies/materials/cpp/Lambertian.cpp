@@ -6,7 +6,11 @@
 
 #include "../hpp/Lambertian.hpp"
 
-Lambertian::Lambertian(const Vector3& a) : albedo(a) {}
+Lambertian::Lambertian(const Vector3& a)
+    : albedo(std::make_shared<SolidColor>(a)) {}
+
+Lambertian::Lambertian(std::shared_ptr<Texture> texture)
+    : albedo(std::move(texture)) {}
 
 bool Lambertian::scatter(const Ray& r_in, const hit_record& rec, Vector3& attenuation, Ray& scattered) const {
     // Scatter direction = normal + random unit vector (cosine-weighted)
@@ -17,6 +21,6 @@ bool Lambertian::scatter(const Ray& r_in, const hit_record& rec, Vector3& attenu
         scatter_direction = rec.normal;
         
     scattered = Ray(rec.p, scatter_direction);
-    attenuation = albedo;
+    attenuation = albedo->value(rec.p);
     return true;
 }
