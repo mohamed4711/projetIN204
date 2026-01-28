@@ -9,7 +9,7 @@ Un moteur de rendu par lancer de rayons (Ray Tracing) développé en C++ moderne
 ### Objectif Global
 Ce projet a pour objectif de mettre en place un moteur de ray tracing capable de :
 - Générer des images photoréalistes grâce à la technique du lancer de rayons
-- Modéliser des scènes 3D complexes avec différents types d'objets géométriques
+- Modéliser des scènes 3D avec différents types d'objets géométriques
 - Appliquer des matériaux réalistes (Lambertien, métallique, diélectrique)
 - Gérer l'éclairage via des sources lumineuses (directionnelle, ponctuelle, spot)
 - Optimiser le rendu via parallélisation multi-thread (OpenMP) et structure de hiérarchie BVH
@@ -39,6 +39,8 @@ Ce projet a pour objectif de mettre en place un moteur de ray tracing capable de
    - Sauvegarde de rendus en format PPM
    - Contrôle des paramètres en temps réel
 
+**Flowchart du système :**
+![Ray Tracing Flow Chart](flow_chart.drawio.png)
 ---
 
 ## Principes de Ray Tracing
@@ -75,7 +77,7 @@ Pixel (x, y)
           └─> Récursion...
 ```
 
-![Ray Tracing Flow Chart](image.png)
+![Ray Tracing Principle](image.png)
 
 ### Accélération avec BVH (Bounding Volume Hierarchy)
 
