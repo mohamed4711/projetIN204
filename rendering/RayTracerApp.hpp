@@ -70,7 +70,7 @@ private:
     int m_lastLoaderType = -1;
     
     // Scene selection (0 = Default, 1 = Upload custom)
-    int m_sceneType = 1;
+    int m_sceneType = 0;
     
     // Save format (0 = PNG, 1 = PPM)
     int m_saveFormat = 1;

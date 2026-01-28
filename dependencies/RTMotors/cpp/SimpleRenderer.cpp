@@ -7,8 +7,6 @@
 #include "../hpp/SimpleRenderer.hpp"
 #include <limits>
 
-const double infinity = std::numeric_limits<double>::infinity();
-
 SimpleRenderer::SimpleRenderer() : Renderer() {}
 
 SimpleRenderer::SimpleRenderer(const SimpleRenderer& other) : Renderer(other) {}

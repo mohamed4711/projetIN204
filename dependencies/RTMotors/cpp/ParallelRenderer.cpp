@@ -5,10 +5,11 @@
 */
 
 #include "../hpp/ParallelRenderer.hpp"
-#include <limits>
+#include "lights/hpp/Light_list.hpp"
 #include <omp.h>
+#include <limits>
 
-const double infinity = std::numeric_limits<double>::infinity();
+
 
 ParallelRenderer::ParallelRenderer() : Renderer() {}
 
