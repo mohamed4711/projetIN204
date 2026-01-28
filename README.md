@@ -1,6 +1,6 @@
 # Ray Tracer (RT) - IN204
 
-Un moteur de rendu par lancer de rayons (Ray Tracing) développé en C++ moderne, basé sur la série *Ray Tracing in One Weekend*. Ce projet utilise SDL2 et ImGui pour l'affichage et l'interface en temps réel du rendu.
+Un moteur de rendu par lancer de rayons (Ray Tracing) développé en C++ moderne, basé sur la série *Ray Tracing in One Weekend* et sur le modèle d'un ainé académique. Ce projet utilise SDL2 et ImGui pour l'affichage et l'interface en temps réel du rendu.
 
 ---
 
@@ -143,7 +143,7 @@ cd /home/naps/Documents/Ensta/POO/projetIN204
 mkdir -p build
 cd build
 cmake ..
-make -j$(nproc)
+make [-j$(nproc)]
 ```
 
 Le binaire `RT` sera généré dans le dossier `build/`.
@@ -310,9 +310,8 @@ Renderer (abstract)
    - Patterns d'optimisation parallèle
 
 ### Ressources en Ligne
-- **Scratchapixel** (https://www.scratchapixel.com/) - Tutoriels graphics avec ray tracing
 - **Path Tracing Series** - YouTube, travaux académiques
-- **IQ on ShaderToy** (https://www.shadertoy.com/) - Techniques de rendu moderne
+- **Daniel Github code** (https://github.com/DanielFrulane/Ray-Tracer-Application /) - 
 
 ### Implémentation Spécifique
 7. **"BVH Acceleration Structures"** - Akenine-Möller et al.
