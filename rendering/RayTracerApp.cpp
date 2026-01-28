@@ -282,9 +282,7 @@ void RayTracerApp::OnRender() {
         ImGui::SameLine();
         if (ImGui::Button("Load")) {
             m_jsonFilePath = std::string(jsonPathBuffer);
-            std::cout << "Loading file: " << m_jsonFilePath << std::endl;
-            SceneLoader::LoadJSONBVH(m_jsonFilePath.c_str(), m_scene);
-            std::cout << "Scene loaded!" << std::endl;
+            LoadScene();
         }
     }
     
